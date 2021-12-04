@@ -1,0 +1,2701 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>C#</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  /*padding: 20px;*/
+  /*max-width: 960px;*/
+  /*margin: 0 auto;*/
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+
+/*custom
+-----------*/
+html,body{
+  height:100%;
+}
+
+#mleft{
+  width:25%;
+  max-height:100%;
+  display:block;
+  overflow:scroll;
+  float:left;
+  z-index:10;
+  position:fixed;
+  top:0px;
+  left:20px;
+}
+#mright{
+  width:70%;
+  float:right;
+}
+</style>
+</head>
+<body>
+<div id="mleft">
+<h1>目錄</h1>
+<hr />
+<ol>
+<li><a href="#c1">開發工具</a></li>
+<li><a href="#c2">建立專案</a></li>
+<li><a href="#c3">命名方式</a></li>
+<li><a href="#c4">資料型別</a></li>
+<li><a href="#c5">變數宣告</a></li>
+<li>
+<a href="#c6">運算子</a>
+<ul>
+<li><a href="#c6-1">算術運算子</a></li>
+<li><a href="#c6-2">遞增遞減運算子</a></li>
+<li><a href="#c6-3">關係運算子</a></li>
+<li><a href="#c6-4">邏輯運算子</a></li>
+<li><a href="#c6-5">位元運算子</a></li>
+<li><a href="#c6-6">位移運算子</a></li>
+<li><a href="#c6-7">複合指定運算子</a></li>
+</ul>
+</li>
+<li><a href="#c7">格式化輸出</a></li>
+<li><a href="#c8">自訂輸出格式</a></li>
+<li><a href="#c9">跳脫字元</a></li>
+<li><a href="#c10">資料型態轉換</a></li>
+<li><a href="#c11">列舉資料型別</a></li>
+<li><a href="#c12">結構資料型別</a></li>
+<li><a href="#c13">條件判斷</a></li>
+<li>
+<a href="#c14">迴圈</a>
+<ul>
+<li><a href="#c14-1">單迴圈</a></li>
+<li><a href="#c14-2">巢狀迴圈</a></li>
+<li><a href="#c14-3">無窮迴圈</a></li>
+</ul>
+</li>
+<li><a href="#c15">中斷與繼續</a></li>
+<li>
+<a href="#c16">陣列</a>
+<ul>
+<li><a href="#c16-1">一維陣列</a></li>
+<li><a href="#c16-2">二維陣列</a></li>
+<li><a href="#c16-3">陣列常用的屬性與方法</a></li>
+<li><a href="#c16-4">foreach</a></li>
+<li><a href="#c16-5">Array.ForEach &lt; T &gt; 方法</a></li>
+<li><a href="#c16-6">陣列的排序與搜尋</a></li>
+<li><a href="#c16-7">不規則陣列</a></li>
+<li><a href="#c16-8">結構陣列</a></li>
+</ul>
+</li>
+<li>
+<a href="#c17">方法</a>
+<ul>
+<li><a href="#c17-1">定義方法</a></li>
+<li><a href="#c17-2">呼叫方法</a></li>
+<li><a href="#c17-3">傳值呼叫</a></li>
+<li><a href="#c17-4">傳參考呼叫</a></li>
+<li><a href="#c17-5">傳出參數</a></li>
+<li><a href="#c17-6">方法傳遞陣列</a></li>
+<li><a href="#c17-7">方法多載</a></li>
+</ul>
+</li>
+<li>
+<a href="#c18">變數</a>
+<ul>
+<li><a href="#c18-1">區塊變數</a></li>
+<li><a href="#c18-2">區域變數</a></li>
+<li><a href="#c18-3">靜態變數</a></li>
+<li><a href="#c18-4">類別欄位(非靜成員)</a></li>
+</ul>
+</li>
+<li><a href="#c19">Visual Studio Code 撰寫 C# 檔案</a></li>
+</ol>
+</div>
+
+<div id="mright">
+<h2 id="c1">一、開發工具</h2>
+<blockquote>
+<p>工欲善其事，必先利其器</p>
+</blockquote>
+<p>開發 c# 最常用的應該就是微軟出的 Visual Studio 整合開發環境（IDE），可用來開發Windows程式、網站、網路應用程式或網路服務等。</p>
+<p>Visual Studio 2015 有以下幾個相關的版本:</p>
+<ol>
+<li>Visual Studio Community 個人或小型團隊</li>
+<li>Visual Studio Profession 專業版</li>
+<li>Visual Studio Enterprise 企業版</li>
+<li>Visual Studio Express 2015 editions 個人簡化版</li>
+<li>Visual Studio Test Professional with MSDN MSDN專業測試版</li>
+<li>Visual Studio Team Foundation Server 2015 雲端協同開發平台</li>
+</ol>
+<p>上課以 Visual Studio Community 為主，下載位置如下:</p>
+<ol>
+<li><a href="http://download.microsoft.com/download/b/e/d/bedddfc4-55f4-4748-90a8-ffe38a40e89f/vs2015.3.com_enu.iso" target="_blan">Visual Studio Community 2015 with Update 3 英文版</a></li>
+<li><a href="http://download.microsoft.com/download/5/9/8/5986FE1C-91AE-4303-B673-9DB22C99B75D/vs2015.com_cht.iso" target="_blank">Visual Studio Community 2015  中文版</a></li>
+</ol>
+<blockquote>
+<p>軟體安裝</p>
+</blockquote>
+<p>1.將下載 ISO 檔燒錄成光碟或直接按右鍵載入，並對 vs_community 點二下進行安裝</p>
+<p><img src="http://i.imgur.com/kU6n9zQ.jpg" /></p>
+<p>2.選擇預設，當然也可以選擇自訂，選擇要安裝的功能，按下一步</p>
+<p><img src="http://i.imgur.com/2r3anxq.jpg" /></p>
+<p>3.如果使用自訂方式，除了跨平台行動開發其它全部勾選</p>
+<p><img src="http://i.imgur.com/H11zr1D.jpg" /></p>
+<p><img src="http://i.imgur.com/cHaVeRQ.jpg" /></p>
+<p>4.會列出剛才選擇的項目及需要使用的空間大小，並按安裝</p>
+<p><img src="http://i.imgur.com/pUAgd8X.jpg" /></p>
+<p>5.安裝中，這個需要安裝一段時間可以放著去做其它事情</p>
+<p><img src="http://i.imgur.com/joPYMsF.jpg" /></p>
+<p>6.安裝完成後有些元件需要重開機，請按立即重新啟動</p>
+<p><img src="http://i.imgur.com/MBWX1vD.jpg" /></p>
+<p>7.第一次使用時，會需要登入帳戶，如果沒有可以馬上註冊一個，註冊是免費的，當然也可以先略過等30天以後再來註冊</p>
+<p><img src="http://i.imgur.com/dM6hvCG.jpg" /></p>
+<p>8.選擇開發環境，這裡我們使用一般，至於顏色就請您自行設定</p>
+<p><img src="http://i.imgur.com/LAuGGVJ.jpg" /></p>
+<p><img src="http://i.imgur.com/2G3GBJD.jpg" /></p>
+<p>9.終於完成可以開始使用囉</p>
+<p><img src="http://i.imgur.com/9ghweyS.jpg" /></p>
+<blockquote>
+<p>設定 ( 工具/選項 )</p>
+</blockquote>
+<p>1.如果一開始所設定的顏色有問題，可以到「環境/一般」，修改色彩佈景主題</p>
+<p><img src="http://i.imgur.com/IzZELlQ.jpg" /></p>
+<p>2.設定行號，可以到「文字編輯器/所有語言/一般」，將行號勾選</p>
+<p><img src="http://i.imgur.com/Tm3qJHf.jpg" /></p>
+<p>3.設定按 TAB 的方法，可以到「文字編輯器/所有語言/定位點」，選擇保留定位點</p>
+<p><img src="http://i.imgur.com/wGqhOub.jpg" /></p>
+<blockquote>
+<p>Visual Studio 安裝完畢後，在安裝目錄下會有使用說明手冊，路徑在 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC#\Specifications\1028 。</p>
+</blockquote>
+<h2 id="c2">二、建立專案</h2>
+<blockquote>
+<p>Visual Studio 可開發主控台應用程式、Windows Form 應用程式、WPF 應用程式、ASP.NET Web應用程式、Cloud 雲端應用程式等相關應用程式和類別庫。</p>
+</blockquote>
+<p>1.選擇檔案/新增/專案</p>
+<p><img src="http://i.imgur.com/kWm4ORZ.jpg" /></p>
+<p>2.選擇範本為 Visual C#，選擇主控台應用程式，並選擇存檔位置 D:\C# ，輸入檔案名稱後按確定</p>
+<p><img src="http://i.imgur.com/X4tLZtV.jpg" /></p>
+<p>3.程式結構</p>
+<pre><code>using System;   //引用System命名空間
+using System.Collections.Generic;   //定義泛型集合的介面和類別
+using System.Linq;  //語言整合查詢
+using System.Text;  //文字ASCII 和 Unicode 字元編碼的類別
+using System.Threading.Tasks;   //非同步作業
+
+namespace Ex1   //專案命名空間名稱
+{
+    class Program   //Program類別
+    {
+        static void Main(string[] args)     //主程式進入點
+        {
+            //在主控台印出Hello C#
+            Console.WriteLine(&quot;Hello C#&quot;);
+            Console.Read(); //暫停
+        }
+    }
+}
+</code></pre>
+
+<p>4.註解</p>
+<pre><code>//代表單行註解
+/*   */代表多行註解
+</code></pre>
+
+<p>5.專案結構</p>
+<table>
+<thead>
+<tr>
+	<th>相關檔案</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Ex1.sln</td>
+	<td>為方案檔 (存放在 Ex1 資料夾下)，副檔名為 sln</td>
+</tr>
+<tr>
+	<td>Ex1.csproj</td>
+	<td>為專案檔 (存放在 Ex1\Ex1 資料夾下)，副檔名為 csproj</td>
+</tr>
+<tr>
+	<td>Program.cs</td>
+	<td>為主控台預設的 C# 程式檔 (存放在 Ex1\Ex1 資料夾下)，副檔名為 cs</td>
+</tr>
+<tr>
+	<td>Ex1.exe</td>
+	<td>為編譯後的執行檔 (存放在 Ex1\Ex1\bin\Debug 資料夾下)，副檔名為 exe</td>
+</tr>
+</tbody>
+</table>
+<p>6.ConSole 類別常用方法</p>
+<table>
+<thead>
+<tr>
+	<th>類別方法</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Write</td>
+	<td>輸出不換行</td>
+</tr>
+<tr>
+	<td>WriteLine</td>
+	<td>輸出並換行</td>
+</tr>
+<tr>
+	<td>Read</td>
+	<td>讀取輸入字串中的第一個字，常用於暫停</td>
+</tr>
+<tr>
+	<td>ReadLine</td>
+	<td>讀取輸入訊息</td>
+</tr>
+<tr>
+	<td>ReadKey</td>
+	<td>按下鍵盤時，會觸發讀取及顯示，常用於按下任意鍵繼續</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>string fname, lname;
+Console.Write(&quot;請輸入姓氏:&quot;);
+fname=Console.ReadLine();
+Console.WriteLine(&quot;請輸入名字:&quot;);
+lname = Console.ReadLine();
+Console.WriteLine(fname + lname + &quot;您好&quot;);
+Console.Read();
+</code></pre>
+
+<h2 id="c3">三、命名方式</h2>
+<blockquote>
+<p>識別字是用來對程式中的一個方法、一個變數或其它使用者定義的項目給予名稱，方便程式在使用時可以識別。</p>
+</blockquote>
+<ol>
+<li>要以英文字母大、小寫或底線開頭，也可以在後面加數字。例:id_no、idNo1。</li>
+<li>英文字母的大小寫會視為不同的字元。例：NAME、Name、name 分別為三個不同的字。</li>
+<li>命名最好要有意義並且和資料有相關連。例:salary_total、salaryTotal。</li>
+<li>C# 允許使用中文字當變數名稱，但是中文字在程式中易造成混淆，建議不要使用。</li>
+<li>不允許關鍵字來當識別字，但是如果真的要使用可以在前面加上 @ 符號就可以當識別字使用。</li>
+</ol>
+<blockquote>
+<p>關鍵字</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th align="center">abstract</th>
+	<th align="center">as</th>
+	<th align="center">base</th>
+	<th align="center">bool</th>
+	<th align="center">break</th>
+	<th align="center">byte</th>
+	<th align="center">case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">catch</td>
+	<td align="center">char</td>
+	<td align="center">checked</td>
+	<td align="center">class</td>
+	<td align="center">const</td>
+	<td align="center">continue</td>
+	<td align="center">decimal</td>
+</tr>
+<tr>
+	<td align="center">default</td>
+	<td align="center">delegate</td>
+	<td align="center">do</td>
+	<td align="center">double</td>
+	<td align="center">else</td>
+	<td align="center">enum</td>
+	<td align="center">event</td>
+</tr>
+<tr>
+	<td align="center">explicit</td>
+	<td align="center">extern</td>
+	<td align="center">false</td>
+	<td align="center">finally</td>
+	<td align="center">fixed</td>
+	<td align="center">float</td>
+	<td align="center">for</td>
+</tr>
+<tr>
+	<td align="center">foreach</td>
+	<td align="center">goto</td>
+	<td align="center">if</td>
+	<td align="center">implicit</td>
+	<td align="center">in</td>
+	<td align="center">int</td>
+	<td align="center">interface</td>
+</tr>
+<tr>
+	<td align="center">internal</td>
+	<td align="center">is</td>
+	<td align="center">lock</td>
+	<td align="center">long</td>
+	<td align="center">namespace</td>
+	<td align="center">new</td>
+	<td align="center">null</td>
+</tr>
+<tr>
+	<td align="center">object</td>
+	<td align="center">operator</td>
+	<td align="center">out</td>
+	<td align="center">override</td>
+	<td align="center">params</td>
+	<td align="center">private</td>
+	<td align="center">protected</td>
+</tr>
+<tr>
+	<td align="center">public</td>
+	<td align="center">readonly</td>
+	<td align="center">ref</td>
+	<td align="center">return</td>
+	<td align="center">sbyte</td>
+	<td align="center">sealed</td>
+	<td align="center">short</td>
+</tr>
+<tr>
+	<td align="center">sizeof</td>
+	<td align="center">stackalloc</td>
+	<td align="center">static</td>
+	<td align="center">string</td>
+	<td align="center">struct</td>
+	<td align="center">switch</td>
+	<td align="center">this</td>
+</tr>
+<tr>
+	<td align="center">throw</td>
+	<td align="center">true</td>
+	<td align="center">try</td>
+	<td align="center">typeof</td>
+	<td align="center">uint</td>
+	<td align="center">virtual</td>
+	<td align="center">volatile</td>
+</tr>
+<tr>
+	<td align="center">void</td>
+	<td align="center">while</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+	<td align="center">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c4">四、資料型別</h2>
+<blockquote>
+<p>程式設計的主要目的是用來處理資料，宣告成適合的資料型別，當程式進行編譯時才能依據這些型別在記憶體中配置記憶體空間來存放資料。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>資料型別</th>
+	<th>名稱</th>
+	<th>.NET Framework</th>
+	<th>大小</th>
+	<th>範圍</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>bool</td>
+	<td>布林</td>
+	<td>System.Boolean</td>
+	<td>1Byte</td>
+	<td>true 或 false</td>
+	<td></td>
+</tr>
+<tr>
+	<td>byte</td>
+	<td>位元</td>
+	<td>System.Byte</td>
+	<td>1Byte</td>
+	<td>0~255</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sbyte</td>
+	<td>位元</td>
+	<td>System.Sbyte</td>
+	<td>1Byte</td>
+	<td>-128~127</td>
+	<td></td>
+</tr>
+<tr>
+	<td>short</td>
+	<td>短整數</td>
+	<td>System.Int16</td>
+	<td>2Bytes</td>
+	<td>-32,768~32,767</td>
+	<td></td>
+</tr>
+<tr>
+	<td>int</td>
+	<td>整數</td>
+	<td>System.Int32</td>
+	<td>4Bytes</td>
+	<td>-2的31次方~2的31次方-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>long</td>
+	<td>長整數</td>
+	<td>System.Int64</td>
+	<td>8Bytes</td>
+	<td>-2的63次方~2的63次方-1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ushort</td>
+	<td>無正負號短整數</td>
+	<td>System.Uint16</td>
+	<td>2Bytes</td>
+	<td>0~65,535</td>
+	<td></td>
+</tr>
+<tr>
+	<td>uint</td>
+	<td>無正負號整數</td>
+	<td>System.Uint32</td>
+	<td>4Bytes</td>
+	<td>0~4,294,967,295</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ulong</td>
+	<td>無正負號長整數</td>
+	<td>System.Uint64</td>
+	<td>8Bytes</td>
+	<td>0~1.8446744e+19</td>
+	<td></td>
+</tr>
+<tr>
+	<td>float</td>
+	<td>單精浮點數</td>
+	<td>System.Single</td>
+	<td>4Bytes</td>
+	<td>-3.4E+38~3.4E+38</td>
+	<td>末尾要加上f</td>
+</tr>
+<tr>
+	<td>decimal</td>
+	<td>貨幣</td>
+	<td>System.Decimal</td>
+	<td>16Bytes</td>
+	<td>-7.9E+28~-7.9E+28</td>
+	<td></td>
+</tr>
+<tr>
+	<td>char</td>
+	<td>字元</td>
+	<td>System.Char</td>
+	<td>2Byte</td>
+	<td>0~65,535</td>
+	<td>以單引號包圍字元</td>
+</tr>
+<tr>
+	<td>string</td>
+	<td>字串</td>
+	<td>System.String</td>
+	<td></td>
+	<td></td>
+	<td>以雙引號包圍字串</td>
+</tr>
+<tr>
+	<td>object</td>
+	<td>物件</td>
+	<td>System.Object</td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="c5">五、變數宣告</h2>
+<blockquote>
+<p>變數在程式執行過程中值會改變，而值不變的稱為常數。不管是變數或常數在使用之前都必須先宣告，宣告的目的是賦予變數或常數一個資料型別及名稱。</p>
+</blockquote>
+<pre><code>語法:
+資料型別 變數名稱;
+資料型別 變數名稱1,變數名稱2......變數名稱N;
+資料型別 變數名稱 = 值;
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>bool b1 = true;
+bool b2 = false;            
+Console.WriteLine(&quot;b1=&quot;+b1+&quot;,b2=&quot;+b2);
+
+byte by1 = 100;
+sbyte by2 = -50;
+Console.WriteLine(&quot;by1=&quot; + by1 + &quot;,by2=&quot; + by2);
+
+short in1 = 30000;
+int in2 = 3000000;
+int in3 = 300000000;
+ushort in4 = 60000;
+uint in5 = 123456789;
+ulong in6 = 123456789123456789;
+Console.WriteLine(&quot;in1=&quot; + in1 + &quot;,in2=&quot; + in2 + &quot;,in3=&quot; + in3);
+Console.WriteLine(&quot;in4=&quot; + in4 + &quot;,in5=&quot; + in5 + &quot;,in6=&quot; + in6);
+
+float f1 = 3.543231f;
+double d1 = 123.3453412312;
+Console.WriteLine(&quot;f1=&quot; + f1 + &quot;,d1=&quot; + d1);
+
+decimal dc = 123345123;
+Console.WriteLine(&quot;dc=&quot; + dc );
+
+char ch1 = 'A';
+char ch2 = (char)65;    //十進位ASCII
+char ch3 = '\x41';      //十六進位ASCII
+char ch4 = '\u0041';    //Unicode
+Console.WriteLine(&quot;ch1=&quot; + ch1 + &quot;,ch2=&quot; + ch2 + &quot;,ch3=&quot; + ch3 + &quot;,ch4=&quot; + ch4);
+
+string str1 = &quot;蜘蛛人&quot;;
+string str2 = &quot;返校日&quot;;
+string str3 = str1 + str2;
+Console.WriteLine(&quot;str1=&quot; + str1 + &quot;,str2=&quot; + str2);
+Console.WriteLine(&quot;str3=&quot; + str3);
+
+object o1 = 10;
+object o2 = 'S';
+object o3 = &quot;神鬼傳奇&quot;;
+object o4 = true;
+Console.WriteLine(&quot;o1=&quot; + o1 + &quot;,o2=&quot; + o2 + &quot;,o3=&quot; + o3 + &quot;,o4=&quot; + o4);
+</code></pre>
+
+<blockquote>
+<p>練習-宣告2個整數變數 n1,n2 並設定初始值分別為 10與20；要求將2個變數進行交換並輸出結果(不使用第3個變數如何交換?)</p>
+</blockquote>
+<h2 id="c6">六、運算子</h2>
+<blockquote>
+<p>運算子是用來指定資做何種運算。運算子區分為如下幾種:</p>
+</blockquote>
+<ol>
+<li>算術運算子</li>
+<li>遞增遞減運算子</li>
+<li>關係運算子</li>
+<li>邏輯運算子</li>
+<li>位元運算子</li>
+<li>位移運算子</li>
+<li>複合指定運算子</li>
+</ol>
+<h3 id="c6-1">1.算術運算子</h3>
+<blockquote>
+<p>用來執行一般的數學運算</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>運算子符號</th>
+	<th>運算子</th>
+	<th>運算式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>+</td>
+	<td>加</td>
+	<td>a+b</td>
+</tr>
+<tr>
+	<td>-</td>
+	<td>減</td>
+	<td>a-b</td>
+</tr>
+<tr>
+	<td>*</td>
+	<td>乘</td>
+	<td>a*b</td>
+</tr>
+<tr>
+	<td>/</td>
+	<td>除</td>
+	<td>a/b</td>
+</tr>
+<tr>
+	<td>%</td>
+	<td>餘數</td>
+	<td>a%b</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int a = 10, b = 3;
+Console.WriteLine(&quot;a+b=&quot; + (a + b));
+Console.WriteLine(&quot;a-b=&quot; + (a - b));
+Console.WriteLine(&quot;a*b=&quot; + (a * b));
+Console.WriteLine(&quot;a/b=&quot; + (a / b));
+Console.WriteLine(&quot;a%b=&quot; + (a % b));
+</code></pre>
+
+<h3 id="c6-2">2.遞增遞減運算子</h3>
+<blockquote>
+<p>放在變數前表示一開始就先計算，放在變數後表示事後再做計算。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>運算式</th>
+	<th>類型</th>
+	<th>運算方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>b=++a</td>
+	<td>前置型</td>
+	<td>a=a+1,b=a</td>
+</tr>
+<tr>
+	<td>b=a++</td>
+	<td>後置型</td>
+	<td>b=a,a=a+1</td>
+</tr>
+<tr>
+	<td>b=--a</td>
+	<td>前置型</td>
+	<td>a=a-1,b=a</td>
+</tr>
+<tr>
+	<td>b=a--</td>
+	<td>後置型</td>
+	<td>b=a,a=a-1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int x, y = 10;
+x = ++y;//y=y+1,x=y
+Console.WriteLine(&quot;x=&quot; + x + &quot;,y=&quot; + y);
+x = y++;//x=y,y=y+1
+Console.WriteLine(&quot;x=&quot; + x + &quot;,y=&quot; + y);
+x = --y;//y=y-1,x=y
+Console.WriteLine(&quot;x=&quot; + x + &quot;,y=&quot; + y);
+x = y--;//x=y,y=y-1
+Console.WriteLine(&quot;x=&quot; + x + &quot;,y=&quot; + y);
+</code></pre>
+
+<h3 id="c6-3">3.關係運算子</h3>
+<blockquote>
+<p>關係運算子是用來比較數字或字串大小，其結果會傳回布林值的 true (真) 或 false (假)。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>關係運算子</th>
+	<th>功能</th>
+	<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>==</td>
+	<td>等於</td>
+	<td>A==B</td>
+</tr>
+<tr>
+	<td>!=</td>
+	<td>不等於</td>
+	<td>A!=B</td>
+</tr>
+<tr>
+	<td>&gt;</td>
+	<td>大於</td>
+	<td>A&gt;B</td>
+</tr>
+<tr>
+	<td>&lt;</td>
+	<td>小於</td>
+	<td>A&lt;B</td>
+</tr>
+<tr>
+	<td>&gt;=</td>
+	<td>大於等於</td>
+	<td>A&gt;=B</td>
+</tr>
+<tr>
+	<td>&lt;=</td>
+	<td>小於等於</td>
+	<td>A&lt;=B</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int n1 = 5, n2 = 8, n3 = 5;
+Console.WriteLine(&quot;n1=n2:&quot; + (n1 == n2));
+Console.WriteLine(&quot;n1=n3:&quot; + (n1 == n3));
+Console.WriteLine(&quot;n1!=n2:&quot; + (n1 != n2));
+Console.WriteLine(&quot;n1!=n3:&quot; + (n1 != n3));
+Console.WriteLine(&quot;n1&gt;n2:&quot; + (n1 &gt; n2));
+Console.WriteLine(&quot;n1&lt;n2:&quot; + (n1 &lt; n2));
+Console.WriteLine(&quot;n1&gt;=n2:&quot; + (n1 &gt;= n2));
+Console.WriteLine(&quot;n1&lt;=n2:&quot; + (n1 &lt;= n2));
+</code></pre>
+
+<h3 id="c6-4">4.邏輯運算子</h3>
+<blockquote>
+<p>邏輯運算子兩邊的運算元都是由布林值所構成，一般都是用來連接多個關係運算式，主要用來測試較複雜的條件，而邏輯運算式的結果也只有 true (真)或 false (假)。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>邏輯運算子</th>
+	<th>功能</th>
+	<th>用法</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>&amp;&amp;</td>
+	<td>AND (且)</td>
+	<td>A &amp;&amp; B</td>
+	<td>只有 A 與 B 都為真，結果才是真</td>
+</tr>
+<tr>
+	<td>ll</td>
+	<td>OR (或)</td>
+	<td>A ll B</td>
+	<td>A 與 B 其中一個為真，結果就是真</td>
+</tr>
+<tr>
+	<td>!</td>
+	<td>NOT (相反)</td>
+	<td>!A</td>
+	<td>如果 A 為真，結果就為假</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>n1 = 10; n2 = 5; n3 = 3;
+Console.WriteLine(&quot;n1&gt;n2 &amp;&amp; n1&lt;n3=&quot; + (n1 &gt; n2 &amp;&amp; n1 &lt; n3));
+Console.WriteLine(&quot;n1&gt;n2 || n1&lt;n3=&quot; + (n1 &gt; n2 || n1 &lt; n3));
+Console.WriteLine(&quot;n1&gt;n2)&quot; + (n1 &gt; n2));
+Console.WriteLine(&quot;!(n1&gt;n2)=&quot; + !(n1 &gt; n2));
+</code></pre>
+
+<h3 id="c6-5">5.位元運算子</h3>
+<blockquote>
+<p>先將運算元轉換成 0 或 1 的二進位制，再將二進位做布林運算。</p>
+</blockquote>
+<p>二進位運算方式</p>
+<p><img src="http://i.imgur.com/I32Sdtz.jpg" /></p>
+<ul>
+<li>&amp; (AND):對應的二個字元都 1 時，運算結果才是 1，否則為 0。</li>
+</ul>
+<p><img src="http://i.imgur.com/JPioV16.jpg" /></p>
+<ul>
+<li>l (OR):對應的二個字元只要任一字元為 1 時，運算結果就是 1。</li>
+</ul>
+<p><img src="http://i.imgur.com/edcQSjR.jpg" /></p>
+<ul>
+<li>^ (XOR):對應的二個字元只有任一字元為 1 時，運算結果才是 1，如果同時為 1 或 0 時，結果即為 0。</li>
+</ul>
+<p><img src="http://i.imgur.com/HsufhxD.jpg" /></p>
+<ul>
+<li>~ (NOT):取 1 的補數，也就是 0 與 1 互換，如果第 1 個數字如果為 1 則代表負值。</li>
+</ul>
+<p><img src="http://i.imgur.com/XVKeWMm.jpg" /></p>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int m1 = 12, m2 = 38;
+Console.WriteLine(&quot;m1 &amp; m2 =&quot; + (m1 &amp; m2));
+Console.WriteLine(&quot;m1 | m2 =&quot; + (m1 | m2));
+Console.WriteLine(&quot;m1 ^ m2 =&quot; + (m1 ^ m2));
+Console.WriteLine(&quot;~ m1 =&quot; + ~m1);
+Console.WriteLine(&quot;~ m2 =&quot; + ~m2);
+</code></pre>
+
+<h3 id="c6-6">6.位移運算子</h3>
+<blockquote>
+<p>可以用來做數值運算，首先將指定的運算元轉換成二進位，接著再使用 &lt;&lt; 或 &gt;&gt; 來進行移動運算。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>位移運算子</th>
+	<th>功能</th>
+	<th>用法</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>&lt;&lt;</td>
+	<td>左移</td>
+	<td>A &lt;&lt; B</td>
+	<td>將 A 往左位移 B 位元，並在最右邊補 0</td>
+</tr>
+<tr>
+	<td>&gt;&gt;</td>
+	<td>右移</td>
+	<td>A &gt;&gt; B</td>
+	<td>將 A 往右位移 B 位元，並在最左邊補 0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int c = 12;
+Console.WriteLine(&quot;c &lt;&lt; 2 =&quot; + (c &lt;&lt; 2));
+Console.WriteLine(&quot;c &gt;&gt; 3 =&quot; + (c &gt;&gt; 3));
+</code></pre>
+
+<h3 id="c6-7">7.複合指定運算子</h3>
+<blockquote>
+<p>需要指定某個變數的值或將某個變數 (運算式) 的結果指定給某個變數。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>複合指定運算子</th>
+	<th>功能</th>
+	<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>=</td>
+	<td>指定</td>
+	<td>A = 5</td>
+</tr>
+<tr>
+	<td>+=</td>
+	<td>相加後再指定</td>
+	<td>A += 5</td>
+</tr>
+<tr>
+	<td>-=</td>
+	<td>相減後再指定</td>
+	<td>A -= 3</td>
+</tr>
+<tr>
+	<td>*=</td>
+	<td>相乘後再指定</td>
+	<td>A *= 2</td>
+</tr>
+<tr>
+	<td>/=</td>
+	<td>相除後再指定</td>
+	<td>A /= 4</td>
+</tr>
+<tr>
+	<td>%=</td>
+	<td>相除後的餘數再指定</td>
+	<td>A %= 6</td>
+</tr>
+<tr>
+	<td>&amp;=</td>
+	<td>做 AND 運算後再指定</td>
+	<td>A &amp;= 3</td>
+</tr>
+<tr>
+	<td>l=</td>
+	<td>做 OR 運算後再指定</td>
+	<td>A l= 8</td>
+</tr>
+<tr>
+	<td>^=</td>
+	<td>做 XOR 運算後再指定</td>
+	<td>A ^= 7</td>
+</tr>
+<tr>
+	<td>&lt;&lt;=</td>
+	<td>左移指定運算</td>
+	<td>A &lt;&lt;= 2</td>
+</tr>
+<tr>
+	<td>&gt;&gt;=</td>
+	<td>右移指定運算</td>
+	<td>A &gt;&gt;= 3</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int num = 10;
+num += 8;
+Console.WriteLine(&quot;num += 8 :&quot; + num);
+num -= 5;
+Console.WriteLine(&quot;num -= 5 :&quot; + num);
+num *= 9;
+Console.WriteLine(&quot;num *= 9 :&quot; + num);
+num /= 2;
+Console.WriteLine(&quot;num /= 2 :&quot; + num);
+num %= 15;
+Console.WriteLine(&quot;num %= 15 :&quot; + num);
+num &amp;= 10;
+Console.WriteLine(&quot;num &amp;= 10 :&quot; + num);
+num |= 8;
+Console.WriteLine(&quot;num |= 8 :&quot; + num);
+num ^= 35;
+Console.WriteLine(&quot;num ^= 35 :&quot; + num);
+num &lt;&lt;= 3;
+Console.WriteLine(&quot;num &lt;&lt;= 3 :&quot; + num);
+num &gt;&gt;= 2;
+Console.WriteLine(&quot;num &gt;&gt;= 2 :&quot; + num);
+</code></pre>
+
+<h2 id="c7">七、格式化輸出</h2>
+<table>
+<thead>
+<tr>
+	<th>字元</th>
+	<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>C 或 c</td>
+	<td>以貨幣方式顯示資料，以 $ 開頭</td>
+</tr>
+<tr>
+	<td>Dn 或 dn</td>
+	<td>以指定 n 位數顯示十進位資料，空白處補 0</td>
+</tr>
+<tr>
+	<td>E 或 e</td>
+	<td>以指數 (科學記號) 方式顯示資料</td>
+</tr>
+<tr>
+	<td>Fn 或 fn</td>
+	<td>以小數有 n 位來顯示資料</td>
+</tr>
+<tr>
+	<td>G 或 g</td>
+	<td>以一般格式顯示</td>
+</tr>
+<tr>
+	<td>N 或 n</td>
+	<td>使用千位符號但不包含 $ 符號，若為 N1 表示保留小數至第一位</td>
+</tr>
+<tr>
+	<td>X 或 x</td>
+	<td>資料以十六進制顯示</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int n1 = 123456, n2 = -123456;
+double n3 = 1234.567, n4 = -1234.567;
+//0與1代表順序;c代表貨幣 後方數字代表小數位數
+Console.WriteLine(&quot;n3={0:c} n4={1:c3}&quot;, n3, n4);
+Console.WriteLine(&quot;n1={0:d9} n2={1:d} n2={2:d7}&quot;,n1,n2,n2);//D代表十進制
+Console.WriteLine(&quot;n3={0:e} n4={1:e3}&quot;,n3,n4);//E代表科學記號
+Console.WriteLine(&quot;n3={0:f1} n4={1:f}&quot;, n3, n4);//F代表小數位數
+Console.WriteLine(&quot;n3={0:g2} n4={1:g}&quot;,n3,n4);//G代表一般格式
+Console.WriteLine(&quot;n3={0:n4} n4={1:n}&quot;,n3,n4);//N代表千分位符號不含$
+Console.WriteLine(&quot;n1={0:x} n2={1:x}&quot;, n1, n2);//X代表十六進制
+</code></pre>
+
+<h2 id="c8">八、自訂輸出格式</h2>
+<blockquote>
+<p>要使用ToString()方法來完成自訂輸出格式</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>格式字元</th>
+	<th>作用</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>0</td>
+	<td>零值</td>
+	<td>若顯示的數值位數比設定格式小未用到的位數會以 0 取代</td>
+</tr>
+<tr>
+	<td>#</td>
+	<td>數字</td>
+	<td>若顯示的數值位數比設定格式小未用到的位數會以空白取代</td>
+</tr>
+<tr>
+	<td>.</td>
+	<td>小數點</td>
+	<td>顯示小數點</td>
+</tr>
+<tr>
+	<td>,</td>
+	<td>千位分隔符號</td>
+	<td>數值中每三位加上一個千位分隔符號</td>
+</tr>
+<tr>
+	<td>%</td>
+	<td>百分比</td>
+	<td>使用%符號並將數值除以100顯示</td>
+</tr>
+<tr>
+	<td>E</td>
+	<td>科學記號</td>
+	<td>使用科學記號方式來顯示</td>
+</tr>
+<tr>
+	<td>\</td>
+	<td>逸出字元</td>
+	<td>在逸出字元後方再加上不用字元會有不同的使用意義</td>
+</tr>
+<tr>
+	<td>'' &quot;&quot;</td>
+	<td>單引號或雙引號</td>
+	<td>會將括號內字串直接顯示出來</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>double num1 = 912345678;
+Console.WriteLine(&quot;電話:&quot; + num1.ToString(&quot;0###-###-###&quot;));
+Console.WriteLine(&quot;數字:&quot; + num1.ToString(&quot;$#,##0&quot;));
+</code></pre>
+
+<blockquote>
+<p>C# 預設讀取文字必須存為字串，如果要使用其它格式可以使用 Convert 來進行轉換</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>轉換方式</th>
+	<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Convert.ToDecimal</td>
+	<td>轉換成貨幣型態</td>
+</tr>
+<tr>
+	<td>Convert.ToSingle</td>
+	<td>轉換成 float 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToDouble</td>
+	<td>轉換成 double 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToBoolean</td>
+	<td>轉換成 boolean 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToByte</td>
+	<td>轉換成 byte 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToInt16</td>
+	<td>轉換成 short 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToInt32</td>
+	<td>轉換成 int 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToInt64</td>
+	<td>轉換成 long 型態</td>
+</tr>
+<tr>
+	<td>Convert.ToChar</td>
+	<td>轉換成 char 型態</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.Write(&quot;byte:&quot;);
+byte x1 = Convert.ToByte(Console.ReadLine());
+Console.Write(&quot;short:&quot;);
+short x2 = Convert.ToInt16(Console.ReadLine());
+Console.Write(&quot;int:&quot;);
+int x3 = Convert.ToInt32(Console.ReadLine());
+Console.Write(&quot;long:&quot;);
+long x4 = Convert.ToInt64(Console.ReadLine());
+Console.Write(&quot;float:&quot;);
+float x5 = Convert.ToSingle(Console.ReadLine());
+Console.Write(&quot;double:&quot;);
+double x6 = Convert.ToDouble(Console.ReadLine());
+Console.Write(&quot;decimal:&quot;);
+decimal x7 = Convert.ToDecimal(Console.ReadLine());
+Console.Write(&quot;char:&quot;);
+char x8 = Convert.ToChar(Console.ReadLine());
+Console.Write(&quot;bool:&quot;);
+bool x9 = Convert.ToBoolean(Console.ReadLine());
+Console.WriteLine(&quot;byte:{0}  short:{1}   int:{2}   long:{3}&quot;,x1,x2,x3,x4);
+Console.WriteLine(&quot;float:{0}  double:{1}   decimal:{2}   char:{3}   bool:{4}&quot;,x5,x6,x7,x8,x9);
+Console.ReadKey();
+</code></pre>
+
+<h2 id="c9">九、跳脫字元</h2>
+<blockquote>
+<p>在輸出時會一些符號會無法輸出這時就必須使用跳脫字元來顯示。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>跳脫字元</th>
+	<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>\'</td>
+	<td>顯示單引號</td>
+</tr>
+<tr>
+	<td>\&quot;</td>
+	<td>顯示雙引號</td>
+</tr>
+<tr>
+	<td>\\</td>
+	<td>顯示倒斜線</td>
+</tr>
+<tr>
+	<td>\a</td>
+	<td>警告聲(嗶)</td>
+</tr>
+<tr>
+	<td>\b</td>
+	<td>退一格 (Backspace)</td>
+</tr>
+<tr>
+	<td>\n</td>
+	<td>換行 (Enter)</td>
+</tr>
+<tr>
+	<td>\r</td>
+	<td>游標移到該行最前方</td>
+</tr>
+<tr>
+	<td>\t</td>
+	<td>跳位 (TAB)</td>
+</tr>
+<tr>
+	<td>\uddd</td>
+	<td>使用Unicode字元</td>
+</tr>
+<tr>
+	<td>\v</td>
+	<td>插入垂直跳格到字串中</td>
+</tr>
+<tr>
+	<td>\0</td>
+	<td>空字元</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.WriteLine(&quot;\&quot;變形金鋼\&quot;:\b\t\'最終\\騎士\'\a\r&quot;);
+</code></pre>
+
+<h2 id="c10">十、資料型態轉換</h2>
+<blockquote>
+<p>在做資料運算時，有時候必須將資料進入轉型才有辦法得到正確的結果。轉型的方法有二種如下:</p>
+</blockquote>
+<ol>
+<li>自動轉型</li>
+<li>強制轉型</li>
+</ol>
+<blockquote>
+<p>自動轉型:由編譯器判斷應轉換成何種資料型態，而轉換的過程會以範圍大者為優先對象。</p>
+</blockquote>
+<p>練習</p>
+<pre><code>int a = 10;
+float b = 3.52f;
+double c;
+c = a + b;
+Console.WriteLine(&quot;a=&quot; + a + &quot;,b=&quot; + b + &quot;,c=&quot; + c);
+Console.WriteLine(&quot;a={0},b={1},c={2:f2}&quot;, a, b, c);
+</code></pre>
+
+<blockquote>
+<p>強制轉型:由使用者強制轉換資料型態，轉換型態的小括號不能省略</p>
+</blockquote>
+<p>練習</p>
+<pre><code>int g1 = 59, g2 = 77, g3 = 69, sum;
+sum = g1 + g2 + g3;
+Console.WriteLine(&quot;總分:&quot; + sum + &quot;,平均:&quot; + (float)sum / 3);
+</code></pre>
+
+<h2 id="c11">十一、列舉資料型別</h2>
+<blockquote>
+<p>列舉資料型別是常數集合，程式在執行期間是不能修改其定義的值。<br/>(注意:列舉資枓型別定義時不能寫在main裡面)</p>
+</blockquote>
+<pre><code>語法:
+[存取修飾詞] enum 列舉名稱 : 資料型別 {
+    列舉成員1 = 初始值1,
+    列舉成員2 = 初始值2,
+    .....
+    列舉成員N = 初始值N
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>//列舉資料型別
+public enum weekday : int
+{
+    Mon=1,
+    Tus=2,
+    Wed=3,
+    Thu=4,
+    Fri=5,
+    Sat=6,
+    Sun=7
+};
+static void Main(string[] args)
+{
+    //列舉資料型別
+    Console.WriteLine(&quot;星期三的數字為:{0}&quot;, (int)weekday.Wed);
+    Console.WriteLine(&quot;數字5為:{0}&quot;, weekday.Fri);
+    Console.Read();
+}
+</code></pre>
+
+<h2 id="c12">十二、結構資料型別</h2>
+<blockquote>
+<p>程式中的一個變數代表一個資料型別的資料，而陣列是由一群性質相同資料型別的集合。至於結構是將數個彼此相關但資料型別不同的變數，集合在一個結構名稱之下構成一個新的結構資料型別。</p>
+</blockquote>
+<pre><code>語法:
+[存取修飾詞] struct 結構名稱 {
+    [存取修飾詞] 資料型別 結構成員1;
+    [存取修飾詞] 資料型別 結構成員2;
+    .......
+    [存取修飾詞] 資料型別 結構成員N;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>public struct product
+{
+    public string no, name;
+    public int price;
+}
+static void Main(string[] args)
+{
+    product game;
+    game.no = &quot;f01&quot;;
+    game.name = &quot;xbox&quot;;
+    game.price = 10000;
+    product cookie;
+    Console.Write(&quot;請輸入編號:&quot;);
+    cookie.no = Console.ReadLine();
+    Console.Write(&quot;請輸入名稱:&quot;);
+    cookie.name = Console.ReadLine();
+    Console.Write(&quot;請輸入價格:&quot;);
+    cookie.price = int.Parse(Console.ReadLine());
+    Console.WriteLine(&quot;產品編號:{0}\n產品名稱:{1}\n價格:{2}&quot;, game.no, game.name, game.price);
+    Console.WriteLine(&quot;產品編號:{0}\n產品名稱:{1}\n價格:{2}&quot;, cookie.no, cookie.name, cookie.price);
+
+    Console.Read();
+}
+</code></pre>
+
+<h2 id="c13">十三、條件判斷</h2>
+<h3>1.IF條件判斷</h3>
+<blockquote>
+<p>當判斷內容為一個區間範圍時</p>
+</blockquote>
+<p>● IF 單條件判斷</p>
+<pre><code>語法:
+if ( 條件 ) {
+    條件成立時執行;
+}
+</code></pre>
+
+<p>● IF 雙條件判斷</p>
+<pre><code>語法:
+if ( 條件 ) {
+    條件成立時執行;
+} else {
+    條件不成立時執行;
+}
+</code></pre>
+
+<p>● IF 多條件判斷</p>
+<pre><code>語法:
+if ( 條件1 ) {
+    條件成立時執行;
+} else if ( 條件2 ) {
+    條件成立時執行;
+} else if ( 條件3 ) {
+........
+} else {
+    條件不成立時執行;
+}
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.Write(&quot;請輸入分數:&quot;);
+int grade=int.Parse(Console.ReadLine());
+if (grade &lt; 60) { Console.WriteLine(&quot;不及格&quot;); }
+if (grade &gt;= 60) { Console.WriteLine(&quot;及格&quot;); }
+if (grade &lt; 60) { Console.WriteLine(&quot;不及格&quot;); } else { Console.WriteLine(&quot;及格&quot;); }
+if (grade &gt;= 90){Console.WriteLine(&quot;優&quot;);
+}else if(grade&gt;=80 &amp;&amp; grade &lt; 90){ Console.WriteLine(&quot;甲&quot;);
+}else if (grade &gt;= 70) { Console.WriteLine(&quot;乙&quot;);
+}else if (grade &gt;= 60) { Console.WriteLine(&quot;丙&quot;);
+}else { Console.WriteLine(&quot;丁&quot;); }
+Console.Read();
+</code></pre>
+
+<p>練習題:輸入1個數字，判斷1到該數字中間值為何。</p>
+<h3>2.switch</h3>
+<blockquote>
+<p>當判斷內容為固定選擇項目時</p>
+</blockquote>
+<pre><code>語法:
+switch(參數){
+    case 值1:
+        執行程式;
+        break;
+    case 值2:
+        執行程式;
+        break;
+    ......
+    default:
+        執行程式;
+        break;
+}
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.Write(&quot;旅遊地點選擇\n1.日本\n2.韓國\n3.東南亞\n請選擇:&quot;);
+int select = int.Parse(Console.ReadLine());
+switch (select)
+{
+    case 1:
+        Console.WriteLine(&quot;選擇地點為日本&quot;);
+        break;
+    case 2:
+        Console.WriteLine(&quot;選擇地點為韓國&quot;);
+        break;
+    case 3:
+        Console.WriteLine(&quot;選擇地點為東南亞&quot;);
+        break;
+    default:
+        Console.WriteLine(&quot;無此選項&quot;);
+        break;
+}
+Console.Read();
+</code></pre>
+
+<p>練習題:輸入字母判斷母音與子音。</p>
+<h3>3.三元運算子</h3>
+<blockquote>
+<p>相當於 if....else.....</p>
+</blockquote>
+<pre><code>語法:
+變數 = 條件 ? 成立 : 不成立 ;
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.Write(&quot;請輸入年齡:&quot;);
+int age = int.Parse(Console.ReadLine());
+string ans=age &gt;= 18 ? &quot;成年&quot; : &quot;未成年&quot;;
+Console.WriteLine(ans);
+Console.Read();
+</code></pre>
+
+<p>練習題:輸入二個數字並顯示最大值。</p>
+<h2 id="c14">十四、迴圈</h2>
+<h3 id="c14-1">1.單迴圈</h3>
+<p>● for迴圈</p>
+<pre><code>語法:
+for(初始值;結束值;增減值){
+    執行項目;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>int sum=0;
+for (int i = 1; i &lt;= 10; i++)
+{               
+    sum += i;
+    Console.Write(i + &quot;+&quot;);
+}
+Console.WriteLine(&quot;\b=&quot; + sum);
+Console.Read();
+</code></pre>
+
+<p>● while迴圈</p>
+<pre><code>語法:
+初始值;
+while(結束值){
+    執行項目;
+    增減值;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>int sum = 0;
+int i = 1;
+while (i &lt;= 10)
+{
+    sum += i;
+    Console.Write(i + &quot;+&quot;);
+    i++;
+}
+Console.WriteLine(&quot;\b=&quot; + sum);
+Console.Read();
+</code></pre>
+
+<p>● do..while迴圈</p>
+<pre><code>語法:
+初始值;
+do{
+    執行項目;
+    增減值;
+}while(結束值);
+</code></pre>
+
+<p>練習</p>
+<pre><code>int sum = 0;
+int i = 1;
+do
+{
+    sum += i;
+    Console.Write(i + &quot;+&quot;);
+    i++;
+} while (i &lt;= 10);
+Console.WriteLine(&quot;\b=&quot; + sum);
+Console.Read();
+</code></pre>
+
+<p>練習題:請分別使用for、while、do..while迴圈計算3的5次方並將每個次方計算的值印出。</p>
+<h3 id="c14-2">2.巢狀迴圈</h3>
+<p>● for迴圈</p>
+<pre><code>語法:
+for(初始值;結束值;增減值){
+    for(初始值;結束值;增減值){
+        執行項目;
+    }
+    執行項目;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>for(int i = 1; i &lt;= 9; i++)
+{
+    for(int j = 1; j &lt;= 9; j++)
+    {
+        Console.Write(j + &quot;*&quot; + i + &quot;=&quot; + (i * j) + &quot;\t&quot;);
+    }
+    Console.WriteLine();
+}
+Console.Read();
+</code></pre>
+
+<p>● while迴圈</p>
+<pre><code>語法:
+初始值;
+while(結束值){
+    初始值;
+    while(結束值){
+        執行項目;
+        增減值;
+    }
+    執行項目;
+    增減值;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>int i = 1;
+while (i &lt;= 9)
+{
+    int j = 1;
+    while (j &lt;= 9)
+    {
+        Console.Write(j + &quot;*&quot; + i + &quot;=&quot; + (i * j) + &quot;\t&quot;);
+        j++;
+    }
+    i++;
+    Console.WriteLine();
+}
+Console.Read();
+</code></pre>
+
+<p>● do..while迴圈</p>
+<pre><code>語法:
+初始值;
+do{
+    初始值;
+    do{
+        執行項目;
+        增減值;
+    }while(結束值);                    
+    執行項目;
+    增減值;
+}while(結束值);
+</code></pre>
+
+<p>練習</p>
+<pre><code>int i = 1;
+do
+{
+    int j = 1;
+    do
+    {
+        Console.Write(j + &quot;*&quot; + i + &quot;=&quot; + (i * j) + &quot;\t&quot;);
+        j++;
+    } while (j &lt;= 9);
+    i++;
+    Console.WriteLine();
+} while (i &lt;= 9);
+Console.Read();
+</code></pre>
+
+<h3 id="c14-3">3.無窮迴圈</h3>
+<p>● for迴圈</p>
+<pre><code>語法:
+for(;;){
+    執行項目;
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>int x = 1;
+for (;;)
+{
+    if (x &gt; 8)
+        break;              
+    Console.Write(x + &quot;,&quot;);
+    x++;
+}
+Console.WriteLine(&quot;\b &quot;);
+</code></pre>
+
+<p>● while迴圈</p>
+<pre><code>語法: 
+while(true){
+    執行項目;       
+}
+</code></pre>
+
+<p>練習</p>
+<pre><code>int sum=0,i=1;
+while (true)
+{
+    if (sum &gt; 100)
+        break;
+    Console.Write(sum + &quot;,&quot;);
+    sum += i;
+    i++;                
+}
+Console.WriteLine(&quot;\b &quot;);
+Console.Read();
+</code></pre>
+
+<p>● do..while迴圈</p>
+<pre><code>語法: 
+do{
+    執行項目;       
+}while(true);
+</code></pre>
+
+<p>練習</p>
+<pre><code>int i = 1;
+do
+{
+    if (i % 2 == 0)
+        Console.Write(i + &quot;,&quot;);
+    else if (i &gt; 100)
+        break;
+    i++;
+} while (true);
+Console.WriteLine(&quot;\b &quot;);
+Console.Read();
+</code></pre>
+
+<h2 id="c15">十五、中斷與繼續</h2>
+<blockquote>
+<p>break表示程式執行到特定條件時會中斷迴圈。</p>
+<p>continue表示程式執行到特定條件時會略過目前的條件繼續下個條件運行。</p>
+</blockquote>
+<p>練習</p>
+<pre><code>char ch;
+do
+{
+    Console.Write(&quot;請輸入第1個數字:&quot;);
+    int x = int.Parse(Console.ReadLine());
+    Console.Write(&quot;請輸入第2個數字:&quot;);
+    int y = int.Parse(Console.ReadLine());
+    int sum = x + y;
+    do
+    {
+        Console.Write(x + &quot;+&quot; + y + &quot;=&quot;);
+        int ans = int.Parse(Console.ReadLine());
+        if (ans == sum)
+        {
+            Console.WriteLine(&quot;答對了&quot;);
+            break;
+        }else
+        {
+            Console.WriteLine(&quot;答錯了&quot;);
+            continue;
+        }
+    } while (true);
+    Console.Write(&quot;是否繼續(Y/N)?&quot;);
+    ch = char.Parse(Console.ReadLine());
+} while (ch == 'y' || ch == 'Y');
+Console.Read();
+</code></pre>
+
+<h2 id="c16">十六、陣列</h2>
+<blockquote>
+<p>程式中的變數只能存放一個資料，當程式中需要使用大量且同性質的資料時，就得為大量變數的命名而煩惱。</p>
+<p>陣列是由多個相同資料型別的變數在記憶體中前後連續串在一起。</p>
+</blockquote>
+<h3 id="c16-1">● 一維陣列</h3>
+<pre><code>語法
+1.資料型別 [ ] 陣列名稱;
+  陣列名稱 = new 資料型別 [ 陣列大小 ];
+2.資料型別 [ ] 陣列名稱 = new 資料型別 [ 陣列大小 ];
+3.資料型別 [ ] 陣列名稱 = new 資料型別 [ 陣列大小 ] { 初始值1,...初始值N };
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int[] arr1;
+arr1 = new int[5];
+int[] arr2 = new int[6] { 1, 2, 3, 4, 5, 6 };
+arr1[0] = 30;
+arr1[1] = arr2[0];
+Console.WriteLine(&quot;arr1[0]=&quot; + arr1[0]);
+for(int i = 0; i &lt; arr2.Length; i++)
+{
+    Console.WriteLine(&quot;arr2[{0}]={1}&quot;, i, arr2[i]);
+}
+Console.Read();
+</code></pre>
+
+<h3 id="c16-2">● 二維陣列</h3>
+<pre><code>語法
+1.資料型別 [ , ] 陣列名稱;
+  陣列名稱 = new 資料型別 [ 第一維陣列大小 , 第二維陣列大小 ];
+2.資料型別 [ , ] 陣列名稱 = new 資料型別 [ 第一維陣列大小 , 第二維陣列大小 ];
+3.資料型別 [ , ] 陣列名稱 = new 資料型別 [ 第一維陣列大小 , 第二維陣列大小 ] { { 初始值1,...初始值N } , .... , { 初始值1,...初始值N } };
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int[,] arr1;
+arr1 = new int[3, 5];
+int[,] arr2 = new int[2, 4];
+int[,] arr3 = new int[3, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 } };
+arr1[0, 0] = 10;
+arr2[1, 3] = arr3[1, 1];
+Console.WriteLine(&quot;arr1[0,0]=&quot; + arr1[0,0]);
+Console.WriteLine(&quot;arr2[1,3]=&quot; + arr2[1,3]);
+for (int i = 0; i &lt; arr3.GetLength(0); i++)
+{
+    for(int j = 0; j &lt; arr3.GetLength(1); j++)
+    {
+        Console.WriteLine(&quot;arr3[{0},{1}]={2}&quot;, i, j, arr3[i, j]);
+    }
+}
+Console.Read();
+</code></pre>
+
+<h3 id="c16-3">● 陣列常用的屬性與方法</h3>
+<pre><code>int [ ] a1 = new int [ 3 ] ;
+int [ , ] a2 = new int [ 3 , 4 ] ;
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>陣列物件的成員</th>
+	<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Length</td>
+	<td>取得指定陣列內所有陣列元素的總數。<br/>a1.Length  回傳 3  ，a2.Length 回傳 12</td>
+</tr>
+<tr>
+	<td>Rank</td>
+	<td>取得指定陣列維度的數目，一維陣列回傳 1 ，二維陣列回傳 2。<br/>a1.Rank  回傳 1 ，a2.Rank  回傳2</td>
+</tr>
+<tr>
+	<td>IsReadOnly</td>
+	<td>回傳指定陣列是否唯讀。<br/>a1.IsReadOnly  回傳 false</td>
+</tr>
+<tr>
+	<td>GetUpperBound</td>
+	<td>取得指定陣列中某一維度上限。<br/>a1.GetUpperBound(0) 一維上限，回傳 2<br/>a2.GetUpperBound(1) 二維上限，回傳 3</td>
+</tr>
+<tr>
+	<td>GetLowerBound</td>
+	<td>取得指定陣列中某一維度的下限。(陣列的下限都是由 0 開始)</td>
+</tr>
+<tr>
+	<td>GetLength</td>
+	<td>取得指定陣列中某一維度的陣列元素總數。<br/>a1.GetLength(0) 回傳 3 ，a2.GetLength(1) 回傳 4</td>
+</tr>
+<tr>
+	<td>CreateInstance</td>
+	<td>建立指定陣列資料型別和大小的一維陣列。<br/>Array a1 = Array.CreateInstace(typeof(Int32),5);<br/>Array a2 = Array.CreateInstace(typeof(Int32),2,3);</td>
+</tr>
+<tr>
+	<td>SetValue</td>
+	<td>設定一維、二維..陣列中陣列元素的值。<br/>a1.SetValue(值,陣列位置);<br/>a1.SetValue(10,2);</td>
+</tr>
+<tr>
+	<td>GetValue</td>
+	<td>取得一維、二維..陣列中位於指位置的值。<br/>a1.GetValue(2); <br/>a2.GetValue(0,1);</td>
+</tr>
+</tbody>
+</table>
+<h3 id="c16-4">● foreach</h3>
+<blockquote>
+<p>與for的功能一樣，兩者差異在 foreach 不用給予迴圈正確的被始值、結束值及增減值，它會自動將指定集合物件(陣列)中的元素逐一指定給變數並代入迴圈內處理。</p>
+</blockquote>
+<pre><code>語法:
+foreach ( 資料型別 變數 in 集合物件 )
+{
+    程式敘述;
+}
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int sum = 0;
+Console.Write(&quot;請輸入學生人數:&quot;);
+int stu = int.Parse(Console.ReadLine());
+Console.WriteLine();
+int[] grade = new int[stu];
+for(int i = 0; i &lt; grade.Length; i++)
+{
+    Console.Write(&quot;第{0}位同學英文成績=&quot;, i + 1);
+    grade[i] = int.Parse(Console.ReadLine());
+}
+foreach(int i in grade)
+{
+    sum += i;
+}
+Console.WriteLine();
+Console.WriteLine(&quot;{0} 位同學英文成績，合計:{1}，平均:{2}&quot;, stu, sum, (float)sum / stu);
+Console.Read();
+</code></pre>
+
+<h3 id="c16-5">● Array.ForEach &lt; T &gt; 方法</h3>
+<blockquote>
+<p>System.Array類別提供此方法，讓指定陣列中的每一個元素都能執行指定的動作。</p>
+</blockquote>
+<pre><code>語法:
+Action&lt;資料型態&gt; 變數名稱 = new Action&lt;資料型態&gt;(執行方法);
+Array.ForEach(陣列名稱,變數名稱);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int[] r = new int[]{ 2, 4, 6, 8, 10};
+Action&lt;int&gt; myarr = new Action&lt;int&gt;(Area);
+Array.ForEach(r, myarr);
+Console.Read();
+}
+public static void Area(int a)
+{
+    double PI = 3.14159;
+    Console.WriteLine(&quot;半徑:{0},圓面積:{1:f}&quot;, a, PI * a * a);
+}
+</code></pre>
+
+<h3 id="c16-6">● 陣列的排序與搜尋</h3>
+<blockquote>
+<p>當陣列需要做遞增或遞減排序時，一般都是使用巢狀迴圈來完成。而在 .Net Framework 類別程式庫中提供了 System.Array 類別靜態方法來讓程式可以很快速完成陣列的排序、反轉、搜尋和清除的工作。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+	<th>靜態方法</th>
+	<th>說明</th>
+	<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>BinarySearch</td>
+	<td>搜尋</td>
+	<td>語法: int n=Array.BinarySearch(陣列名稱,搜尋資料);<br>資料必須由小到大排序後才找得到</td>
+</tr>
+<tr>
+	<td>Clear</td>
+	<td>清除</td>
+	<td>語法: Array.Clear(陣列名稱,起始位置,刪除個數);</td>
+</tr>
+<tr>
+	<td>IndexOf</td>
+	<td>搜尋</td>
+	<td>語法: int n=Array.IndexOf(陣列名稱,搜尋資料);</td>
+</tr>
+<tr>
+	<td>Sort</td>
+	<td>排序</td>
+	<td>語法1: Array.Sort(陣列名稱);<br>語法2: Array.Sort(陣列名稱1,陣列名稱2);<br>語法3: Array.Sort(陣列名稱1,起始位置,排序長度);</td>
+</tr>
+<tr>
+	<td>Reverse</td>
+	<td>反轉</td>
+	<td>語法1: Array.Reverse(陣列名稱);<br>語法2: Array.Reverse(陣列名稱,起始位置,排序長度);</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>Console.Write(&quot;請輸入成績筆數:&quot;);
+int s = int.Parse(Console.ReadLine());
+int[] n = new int[s];
+for (int i = 0; i &lt; n.Length; i++)
+{
+    Console.Write(&quot;第{0}位同學分數:&quot;, i+1);
+    n[i] = int.Parse(Console.ReadLine());
+}
+Console.Write(&quot;排序前:&quot;);
+for (int i = 0; i &lt; n.Length; i++)
+{
+    Console.Write(n[i] + &quot;,&quot;);
+}
+
+Console.Write(&quot;\b \n由小到大:&quot;);
+Array.Sort(n);
+for (int i = 0; i &lt; n.Length; i++)
+{
+    Console.Write(n[i] + &quot;,&quot;);
+}
+
+Console.Write(&quot;\b \n由大到小:&quot;);
+Array.Reverse(n);
+for (int i = 0; i &lt; n.Length; i++)
+{
+    Console.Write(n[i] + &quot;,&quot;);
+}
+
+Console.Write(&quot;\b \n請輸入搜尋數字:&quot;);
+int num = int.Parse(Console.ReadLine());
+int bs = Array.BinarySearch(n, num);
+int io = Array.IndexOf(n, num);
+Console.WriteLine(&quot;BinarySearch搜尋結果:{0},IndexOf搜尋結果:{1}&quot;, bs, io);
+
+Console.Write(&quot;請輸入要刪除的筆數:&quot;);
+int del = int.Parse(Console.ReadLine());
+Array.Clear(n, del-1, 1);
+Console.Write(&quot;刪除後的結果:&quot;);
+for (int i = 0; i &lt; n.Length; i++)
+{
+    Console.Write(n[i] + &quot;,&quot;);
+}
+Console.Write(&quot;\b &quot;);
+Console.Read();
+</code></pre>
+
+<h3 id="c16-7">● 不規則陣列</h3>
+<blockquote>
+<p>陣列中的每一列長度可以不同，稱為不規則陣列或非矩形陣列。</p>
+</blockquote>
+<pre><code>語法:
+資料型別[][] 陣列名稱 = new 資料型別[陣列大小][];
+陣列名稱[0] = new 資料型別[陣列大小);
+....
+陣列名稱[N] = new 資料型別[陣列大小);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>int[][] arr = new int[5][];
+arr[0] = new int[] { 1, 2, 3 };
+arr[1] = new int[] { 1, 2, 3, 4 };
+arr[2] = new int[] { 1, 2, 3, 4, 5 };
+arr[3] = new int[] { 1, 2, 3, 4 };
+arr[4] = new int[] { 1, 2, 3 };
+for(int i = 0; i &lt; arr.Length; i++)
+{
+    for(int j = 0; j &lt; arr[i].Length; j++)
+    {
+        Console.Write(arr[i][j] + &quot;\t&quot;);
+    }
+    Console.WriteLine();
+}
+Console.Read();
+</code></pre>
+
+<h3 id="c16-8">● 結構陣列</h3>
+<blockquote>
+<p>結構變數只能代表一筆資料，如果有多筆資料就必須使用結構陣列來存放。</p>
+</blockquote>
+<pre><code>結構語法:
+[存取修飾元] struct 結構名稱{
+    [存取修飾元] 資料型別1 欄位名稱1;
+    ...
+    [存取修飾元] 資料型別N 欄位名稱N;
+}
+
+結構陣列語法:
+結構名稱[] 陣列名稱 = new 結構名稱[陣列大小];
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>struct stu
+    {
+        public string name;
+        public int age;
+    }
+static void Main(string[] args)
+{
+
+    stu[] arr = new stu[5];
+    for (int i = 0; i &lt; arr.Length; i++)
+    {
+        Console.Write(&quot;請輸入第{0}位同學姓名:&quot;, i + 1);
+        arr[i].name = Console.ReadLine();
+        Console.Write(&quot;請輸入第{0}位同學年齡:&quot;, i + 1);
+        arr[i].age = int.Parse(Console.ReadLine());
+    }
+    Console.WriteLine(&quot;\t姓名\t年齡&quot;);
+    for(int i = 0; i &lt; arr.Length; i++)
+    {
+        Console.WriteLine(&quot;第{0}位\t{1}\t{2}&quot;, i + 1, arr[i].name, arr[i].age);
+    }
+    Console.Read();
+}
+</code></pre>
+
+<h2 id="c17">十七、方法</h2>
+<h3 id="c17-1">定義方法</h3>
+<pre><code>語法:
+[存取修飾詞] static 傳回值型別 方法名稱 (引數1,....引數N){
+    方法內容;
+    return 運算式;
+}
+</code></pre>
+
+<table>
+<thead>
+<tr>
+	<th>存取修飾詞</th>
+	<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>public</td>
+	<td>類別或類別成員存取範圍完全沒有限制</td>
+</tr>
+<tr>
+	<td>protected</td>
+	<td>類別或類別成員存取範圍限於父類別或繼承父類別的子類別可以使用</td>
+</tr>
+<tr>
+	<td>internal</td>
+	<td>類別或類別成員存取只限於目前專案</td>
+</tr>
+<tr>
+	<td>protected internal</td>
+	<td>類別或類別成員存取只限於目前專案或繼承自父類別</td>
+</tr>
+<tr>
+	<td>private</td>
+	<td>只有本身的類別可以存取</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>private static void add()
+{
+    int a = 10, b = 5;
+    Console.WriteLine(&quot;{0}+{1}={2}&quot;, a, b, a + b);
+}
+static void Main(string[] args)
+{
+    add();
+    Console.Read();
+}
+</code></pre>
+
+<h3 id="c17-2">呼叫方法</h3>
+<pre><code>語法:
+1.同一類別:  方法名稱(引數1,...引數N);
+2.不同類別:  類別名稱.方法名稱(引數1,...引數N);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>class Program
+{
+    private static void add()
+    {
+        int a = 10, b = 5;
+        Console.WriteLine(&quot;{0}+{1}={2}&quot;, a, b, a + b);
+    }
+    static void Main(string[] args)
+    {
+        add();
+        Program2.add();
+        Console.Read();
+    }
+}
+class Program2
+{
+    public static void add()
+    {
+        int a = 5, b = 3;
+        Console.WriteLine(&quot;{0}*{1}={2}&quot;, a, b, a * b);
+    }
+}
+</code></pre>
+
+<h3 id="c17-3">傳值呼叫</h3>
+<blockquote>
+<p>方法中可以傳入多個參數值並使用return回傳結果，而呼叫時會將現有的引數複製一份為虛引數存在不同記憶體位置中，而虛引數被修改時不會影響到原有的引數內容。</p>
+<p>引數可以是變數、常數或運算式。例:sum(a,7,a+10);//括號內依序為變數、常數、運算式</p>
+</blockquote>
+<pre><code>語法:
+1.定義方法:
+    [存取修飾詞] static 傳回值型別 方法名稱 (引數1,....引數N){
+        方法內容;
+        return 運算式;
+    }
+2.呼叫:
+    方法名稱(引數1,...引數N);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>private static int level(int a)
+{
+    int sum = 1;
+    for(int i = 1; i &lt;= a; i++)
+    {
+        sum *= i;
+    }
+    return sum;
+}
+static void Main(string[] args)
+{           
+    Console.Write(&quot;請輸入計算階層:&quot;);
+    int num = int.Parse(Console.ReadLine());
+    Console.WriteLine(&quot;{0}!={1}&quot;, num, level(num));
+    Console.Read();
+}
+</code></pre>
+
+<h3 id="c17-4">傳參考呼叫</h3>
+<blockquote>
+<p>以記憶體位置的值進行呼叫，而引數必須為變數、陣列或物件，不能為常數或運算式。</p>
+</blockquote>
+<pre><code>語法:
+1.定義方法:
+    [存取修飾詞] static 傳回值型別 方法名稱 (ref 引數1,....,ref 引數N){
+        方法內容;
+        return 運算式;
+    }
+2.呼叫:
+    方法名稱(ref 引數1,....ref 引數N);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>private static void ct(ref int a,ref int b)
+{
+    int temp;
+    a = 5;b = 3;
+    Console.WriteLine(&quot;方法內容交換前,a={0},b={1}&quot;, a, b);
+    temp = a;
+    a = b;
+    b = temp;
+    Console.WriteLine(&quot;方法內容交換後,a={0},b={1}&quot;, a, b);
+}
+static void Main(string[] args)
+{   
+    int a = 10, b = 5;
+    Console.WriteLine(&quot;呼叫前,a={0},b={1}&quot;, a, b);
+    ct(ref a, ref b);
+    Console.WriteLine(&quot;呼叫後,a={0},b={1}&quot;, a, b);
+
+    Console.Read();
+}
+</code></pre>
+
+<h3 id="c17-5">傳出參數</h3>
+<blockquote>
+<p>與參考呼叫的引數與虛引數都是共同佔用相同的記憶體位置。二個的差別在於傳出參數的引數不必設定初始值即可作參數傳遞，而參考呼叫必須先定初始值。</p>
+</blockquote>
+<pre><code>語法:
+1.定義方法:
+    [存取修飾詞] static 傳回值型別 方法名稱 (out 引數1,....,out 引數N){
+        方法內容;
+        return 運算式;
+    }
+2.呼叫:
+    方法名稱(out 引數1,....out 引數N);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>private static void ct1(out int n1, out int n2)
+{
+    int temp;
+    n1 = 5; n2 = 3;
+    Console.WriteLine(&quot;方法內容交換前,n1={0},n2={1}&quot;, n1, n2);
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+    Console.WriteLine(&quot;方法內容交換後,n1={0},n2={1}&quot;, n1, n2);
+}
+static void Main(string[] args)
+{       
+    int n1, n2;
+    ct1(out n1, out n2);
+    Console.WriteLine(&quot;呼叫後,n1={0},n2={1}&quot;, n1, n2);
+
+    Console.Read();
+}
+</code></pre>
+
+<h3 id="c17-6">方法傳遞陣列</h3>
+<blockquote>
+<p>使用參考呼叫方式將陣列值傳給方法的虛引數，而ref可以同時省略不必撰寫。</p>
+</blockquote>
+<pre><code>語法:
+1.定義方法:
+    [存取修飾詞] static 傳回值型別 方法名稱 (ref 資料型態[] 陣列名稱){
+        方法內容;
+        return 運算式;
+    }
+2.呼叫:
+    方法名稱(ref 陣列名稱);
+</code></pre>
+
+<blockquote>
+<p>練習</p>
+</blockquote>
+<pre><code>private static int GetMin(int[] arr)
+    {
+        int min = arr[0];
+        for(int i = 0; i &lt; arr.Length; i++)
+        {
+            if (min &gt; arr[i])
+                min = arr[i];
+        }
+        return min;
+    }
+    static void Main(string[] args)
+    {
+        int[] array = new int[] { 3, 8, 4, 10, 7, 2, 5 };
+        Console.WriteLine(&quot;陣列最小值:{0}&quot;, GetMin(array));
+        Console.Read();
+    }
+</code></pre>
+
+<h3 id="c17-7">方法多載</h3>
+<blockquote>
+<p>在類別中使用相同名稱建立多個方法，而方法多載是以引數的型別與個數來判定。</p>
+</blockquote>
+<p>練習</p>
+<pre><code>public static void sum()
+{
+    Console.Write(&quot;請輸入第1個數字:&quot;);
+    int n1 = int.Parse(Console.ReadLine());
+    Console.Write(&quot;請輸入第2個數字:&quot;);
+    int n2 = int.Parse(Console.ReadLine());
+    if (n1 &gt; n2)
+    {
+        int temp;
+        temp = n1;
+        n1 = n2;
+        n2 = temp;
+    }
+    int sum = 0;
+    for(int i = n1; i &lt;= n2; i++)
+    {
+        Console.Write(i + &quot;+&quot;);
+        sum += i;
+    }
+    Console.WriteLine(&quot;\b=&quot; + sum);
+}
+public static int sum(int a,int b)
+{
+    return a + b;
+}
+static void Main(string[] args)
+{
+    sum();
+    Console.WriteLine(&quot;二數相乘={0}&quot;, sum(3, 5));
+    Console.Read();
+}
+</code></pre>
+
+<h2 id="c18">十八、變數</h2>
+<h3 id="c18-1">區塊變數</h3>
+<blockquote>
+<p>程式前後以大括號括住多行程式敘述，例:for、switch。在區塊內所宣告的變數只能在區塊中使用，區塊外一率不能存取。</p>
+</blockquote>
+<pre><code>static void Main(string[] args)
+{
+    //i與j都是區塊變數
+    for(int i=1;i&lt;=5;i++)
+    {
+        for(int j=5;j&gt;=i;j--)
+        {
+            Console.Write(&quot;*&quot;);
+        }
+        Console.WriteLine();
+    }
+    Console.Read();
+}
+</code></pre>
+
+<h3 id="c18-2">區域變數</h3>
+<blockquote>
+<p>區域變數是在方法內宣告的變數或是方法的引數，一但離開方法則變數生命週期馬上結束。</p>
+</blockquote>
+<pre><code>class Program
+{
+    private void Myclass()
+    {
+        string name=&quot;jack&quot;; //區域變數
+        int grade=68;       //區域變數
+        Console.WriteLine(&quot;{0}英文成績{1}分&quot;,name,grade);
+    }
+    static void Main(string[] args)
+    {
+        Myclass();//呼叫方法
+        Console.Read();
+    }
+}
+</code></pre>
+
+<h3 id="c18-3">靜態變數</h3>
+<blockquote>
+<p>若在類別內所宣告的變數前方加上static即為靜態變數，而宣告靜態變數必須在方法外面宣告；靜態變數離開方法後其值不會被釋放，一直到程式停止執行為止。</p>
+</blockquote>
+<pre><code>class Program
+{
+    private static int age = 10;
+    private static string name = &quot;王小明&quot;;
+    static void Main(string[] args)
+    {
+        Console.WriteLine(&quot;{0},年齡{1}歲&quot;, name, age);
+        Console.WriteLine(&quot;{0},年齡{1}歲&quot;, Program2.name, Program2.age);
+        Console.Read();
+    }
+}
+class Program2
+{
+    public static int age = 28;
+    public static string name = &quot;張三&quot;;
+}
+</code></pre>
+
+<h3 id="c18-4">類別欄位(非靜成員)</h3>
+<blockquote>
+<p>物件屬性與靜態變數一樣，不同的是物件屬性放在Heap區，而靜態變數放在全域變數區中，因此物件屬性必須建立物件實體才能使用。當物件生命週期結束之後，非靜態的物件屬性生命週期也就跟著結束。</p>
+</blockquote>
+<pre><code>class Myclass{
+    public static int No;   //靜態變數(靜態成員)
+    public string Name;     //物件屬性(非靜態成員)
+}
+</code></pre>
+
+<h1 id="c19">Visual Studio Code 撰寫 C# 檔案</h1>
+<h2>下載</h2>
+<p>1.瀏覽器輸入 visual studio code，點選 Visual Studio Code - Code Editing .Readefined</p>
+<p><img src="http://i.imgur.com/Kp37NQI.jpg" /></p>
+<p>2.點選 Download for Windows</p>
+<p><img src="http://i.imgur.com/5eIVfOf.jpg" /></p>
+<p>3.選擇 儲存檔案</p>
+<p><img src="http://i.imgur.com/aDe1vjP.jpg" /></p>
+<h2>安裝</h2>
+<p>1.對下載檔案點二下開始安裝</p>
+<p><img src="http://i.imgur.com/z8xTv1v.jpg" /></p>
+<p>2.安裝精靈，直接按下一步</p>
+<p><img src="http://i.imgur.com/btoY5fq.jpg" /></p>
+<p>3.授權合約，請選擇我接受合約後按下一步</p>
+<p><img src="http://i.imgur.com/NQNQCPR.jpg" /></p>
+<p>4.安裝路徑不用修改，按下一步</p>
+<p><img src="http://i.imgur.com/qlQB51X.jpg" /></p>
+<p>5.開始功能表名稱不用修改，按下一步</p>
+<p><img src="http://i.imgur.com/BJ0JMsF.jpg" /></p>
+<p>6.勾選建立桌面捷徑，按下一步</p>
+<p><img src="http://i.imgur.com/ocNvp8U.jpg" /></p>
+<p>7.顯示剛才設定內容，如果沒問題按安裝</p>
+<p><img src="http://i.imgur.com/o4AfRJS.jpg" /></p>
+<p>8.安裝完畢，請點選完成</p>
+<p><img src="http://i.imgur.com/FgZp2tY.jpg" /></p>
+<h2>安裝擴充程式</h2>
+<p>選擇 左側擴充功能，輸入C#並搜尋，依下圖點選安裝</p>
+<p><img src="http://i.imgur.com/5QsUCWD.jpg" /></p>
+<h2>下載 .NET Code SDK</h2>
+<p>1.瀏覽器輸入 .net code sdk 並搜尋，點選 Get Started with .NET Core - Microsoft</p>
+<p><img src="http://i.imgur.com/dAolRyl.jpg" /></p>
+<p>2.點選 Command line / other</p>
+<p><img src="http://i.imgur.com/ifDnmof.jpg" /></p>
+<p>3.點選 Download .NET Core SDK</p>
+<p><img src="http://i.imgur.com/qPzIgM7.jpg" /></p>
+<p>4.選擇儲存檔案</p>
+<p><img src="http://i.imgur.com/kSbfgMB.jpg" /></p>
+<h2>安裝 .NET Code SDK</h2>
+<p>1.對下載檔案點二下進行安裝</p>
+<p><img src="http://i.imgur.com/NhfpfyC.jpg" /></p>
+<p>2.勾選 I agree to the license terms and conditions ，並點選 Install</p>
+<p><img src="http://i.imgur.com/PmT1MYT.jpg" /></p>
+<p>3.安裝完畢，請點選 Close</p>
+<p><img src="http://i.imgur.com/whL2gWR.jpg" /></p>
+<h2>建立新專案</h2>
+<p>1.選擇 檔案 / 開啟資料夾</p>
+<p><img src="http://i.imgur.com/ghaS5TG.jpg" /></p>
+<p>2.在 C 槽下建立 C# 資料夾，在 C# 資料夾下建立 ex1 資料夾並開啟</p>
+<p><img src="http://i.imgur.com/A48YMnw.jpg" /></p>
+<p><img src="http://i.imgur.com/0u2FTzt.jpg" /></p>
+<p>3.選擇 檢視 / 整合式終端機</p>
+<p><img src="http://i.imgur.com/A0tF7zf.jpg" /></p>
+<p>4.終端機位置輸入 dotnet new 來產生 C# 專案需要檔案</p>
+<p><img src="http://i.imgur.com/fHDC7DA.jpg" /></p>
+<p>5.終端機位置輸入 dotnet new console 來產生 C# 專案檔</p>
+<p><img src="http://i.imgur.com/Nhuqtg9.jpg" /></p>
+<p>6.點選 Program.cs 並等它跑完後按 Restore </p>
+<p><img src="http://i.imgur.com/BzxJApG.jpg" /></p>
+<p>7.執行時請輸入 dotnet run</p>
+<p><img src="http://i.imgur.com/tJrr5PH.jpg" /></p>
+<h2>修改終端機中文亂碼</h2>
+<p>1.檔案 / 喜好設定 / 設定</p>
+<p><img src="http://i.imgur.com/Mfg1ofu.jpg" /></p>
+<p>2.選擇整合式終端機</p>
+<p><img src="http://i.imgur.com/Ln4D1ys.jpg" /></p>
+<p>3.找到 &quot;terminal.integrated.shellArgs.windows&quot;:[], 點選(複製到設定)</p>
+<p><img src="http://i.imgur.com/hm6uwiU.jpg" /></p>
+<p>4.找到 &quot;terminal.integrated.fontFamily&quot;:&quot;&quot;, 點選(複製到設定)</p>
+<p><img src="http://i.imgur.com/AIQogRY.jpg" /></p>
+<p>5.加入資料如圖</p>
+<p><img src="http://i.imgur.com/taSnMHE.jpg" /></p>
+
+</div>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
