@@ -1535,6 +1535,11 @@ Console.WriteLine(&quot;a={0},b={1},c={2:f2}&quot;, a, b, c);
 <blockquote>
 <p>由使用者強制轉換資料型態，轉換型態的小括號不能省略</p>
 </blockquote>
+
+<pre><code>語法：
+變數 = (資料型別)變數或運算式;
+</code></pre>
+
 <p>練習</p>
 <pre><code>int g1 = 59, g2 = 77, g3 = 69, sum;
 sum = g1 + g2 + g3;
@@ -1544,9 +1549,12 @@ Console.WriteLine(&quot;總分:&quot; + sum + &quot;,平均:&quot; + (float)sum 
 <h4>Parse方法:</h4>
 <blockquote>
 <p>使用者由鍵盤輸入的資料強制轉成指定型態</p>
-<p>語法：</p>
-<p>資料型別 變數名稱 = 資料型別.Parse(字串);</p>
 </blockquote>
+
+<pre><code>語法：
+資料型別 變數名稱 = 資料型別.Parse(字串);
+</code></pre>
+
 <p>練習</p>
 <pre><code>Console.Write("請輸入年齡：");
 int age = int.Parse(Console.ReadLine());
