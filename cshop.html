@@ -1515,9 +1515,12 @@ Console.ReadKey();
 <ol>
 <li>自動轉型</li>
 <li>強制轉型</li>
+<li>Parse方法</li>
 </ol>
+
+<h4>自動轉型:</h4>
 <blockquote>
-<p>自動轉型:由編譯器判斷應轉換成何種資料型態，而轉換的過程會以範圍大者為優先對象。</p>
+<p>由編譯器判斷應轉換成何種資料型態，而轉換的過程會以範圍大者為優先對象。</p>
 </blockquote>
 <p>練習</p>
 <pre><code>int a = 10;
@@ -1528,14 +1531,27 @@ Console.WriteLine(&quot;a=&quot; + a + &quot;,b=&quot; + b + &quot;,c=&quot; + c
 Console.WriteLine(&quot;a={0},b={1},c={2:f2}&quot;, a, b, c);
 </code></pre>
 
+<h4>強制轉型:</h4>
 <blockquote>
-<p>強制轉型:由使用者強制轉換資料型態，轉換型態的小括號不能省略</p>
+<p>由使用者強制轉換資料型態，轉換型態的小括號不能省略</p>
 </blockquote>
 <p>練習</p>
 <pre><code>int g1 = 59, g2 = 77, g3 = 69, sum;
 sum = g1 + g2 + g3;
 Console.WriteLine(&quot;總分:&quot; + sum + &quot;,平均:&quot; + (float)sum / 3);
 </code></pre>
+
+<h4>Parse方法:</h4>
+<blockquote>
+<p>使用者由鍵盤輸入的資料強制轉成指定型態</p>
+<p>語法：</p>
+<p>資料型別 變數名稱 = 資料型別.Parse(字串);</p>
+</blockquote>
+<p>練習</p>
+<pre><code>Console.Write("請輸入年齡：");
+int age = int.Parse(Console.ReadLine());
+Console.WriteLine("年齡：{0}",);
+</code></pre>	
 
 <h2 id="c11">十一、列舉資料型別</h2>
 <blockquote>
