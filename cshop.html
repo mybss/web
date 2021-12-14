@@ -1558,7 +1558,7 @@ Console.WriteLine(&quot;總分:&quot; + sum + &quot;,平均:&quot; + (float)sum 
 <p>練習</p>
 <pre><code>Console.Write("請輸入年齡：");
 int age = int.Parse(Console.ReadLine());
-Console.WriteLine("年齡：{0}",);
+Console.WriteLine("年齡：{0}",age);
 </code></pre>	
 
 <h2 id="c11">十一、列舉資料型別</h2>
@@ -1668,9 +1668,8 @@ if ( 條件1 ) {
 }
 </code></pre>
 
-<blockquote>
-<p>練習</p>
-</blockquote>
+<blockquote><p>練習</p></blockquote>
+
 <pre><code>Console.Write(&quot;請輸入分數:&quot;);
 int grade=int.Parse(Console.ReadLine());
 if (grade &lt; 60) { Console.WriteLine(&quot;不及格&quot;); }
@@ -1684,7 +1683,50 @@ if (grade &gt;= 90){Console.WriteLine(&quot;優&quot;);
 Console.Read();
 </code></pre>
 
-<p>練習題:輸入1個數字，判斷1到該數字中間值為何。</p>
+<blockquote><p>練習題:輸入1個數字，判斷1到該數字中間值為何。</p></blockquote>
+	
+<p>● 巢狀 IF 條件判斷</p>
+<pre><code>語法:
+if ( 條件1 ) {
+    if ( 條件2 ) {
+	敍述區段A;
+    } else {
+	敍述區段B;
+    }
+} else {
+    if ( 條件3 ) {
+	敍述區段C;
+    } else {
+	敍述區段D;
+    }
+}
+</code></pre>	
+
+<blockquote><p>練習：輸入三個數字找出最大值</p></blockquote>
+
+<pre><code>int max;
+Console.Write("請輸入第1個數字：");
+int n1 = int.Parse(Console.ReadLine());
+Console.Write("請輸入第2個數字：");
+int n2 = int.Parse(Console.ReadLine());
+Console.Write("請輸入第3個數字：");
+int n3 = int.Parse(Console.ReadLine());
+if(n1>n2){
+  if(n1>n3){
+     max=n1;
+  }else{
+     max=n3;
+  }
+}else{
+  if(n2>n3){
+     max=n2;
+  }else{
+     max=n3;
+  }
+}
+Console.WriteLine("最大值：{0}",max);
+</code></pre>
+
 <h3>2.switch</h3>
 <blockquote>
 <p>當判斷內容為固定選擇項目時</p>
