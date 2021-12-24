@@ -1,0 +1,404 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+<link rel="manifest" href="icon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="icon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<title>甜點屋</title>
+<style type="text/css">
+* {
+	padding: 0px;
+	margin: 0px;	
+}
+body {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+#header {
+	background-image: url(images/header_bg.jpg);
+	background-position: center center;
+	height: 700px;
+}
+#logo {
+	background-image: url(images/logo.png);
+	width: 420px;
+	height: 177px;
+	display: block;
+	float: left;
+	margin-left: 150px;
+	margin-top: 400px;
+	text-indent: -9999px;
+}
+#logo a {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+#nav {
+	width: 900px;	
+	clear: both;
+	margin-left: 50px;
+	float: left;
+	margin-top: -530px;
+}
+#nav ul {
+	list-style-type: none;
+}
+#nav ul li a {
+	width: 145px;
+	height: 35px;
+	padding-top: 10px;
+	margin-right: 2px;
+	display: block;
+	float: left;
+	text-align: center;	
+	text-decoration: none;
+	color: #FFFFFF;
+	font-weight: bold;
+	background-color: #AC609D;
+	border-radius: 10px;
+	border: 1px solid #5C2F52;
+}
+#nav ul li a:hover {
+	background-color: #DEC0D7;
+	color: #64345A;
+	font-size: 20px;
+	padding-top: 5px;
+	height: 40px;
+}
+#top a {
+	width: 50px;
+	height: 35px;
+	background-color: #77B7DB;
+	color: #FFFFFF;
+	font-weight: bold;
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+	text-align: center;
+	padding-top: 15px;
+	text-decoration: none;
+}
+#footer {
+	min-height: 200px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#a1 img ,#a3 img{
+	margin: 10px;
+	width: 400px;
+	float: left;
+}
+h1 {
+	font-size: 24px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	clear: both;
+}
+#a1 p  ,#a2 p,#a3 p{
+	line-height: 1.5em;
+	text-align: justify;
+	margin-bottom: 10px;
+	text-indent: 32px;
+}
+#a1 ,#a2,#a3,#a4,#a5,#a6{
+	min-height: 600px;
+	padding-left: 15%;
+	padding-right: 15%;
+}
+#a2 img {
+	width: 400px;
+	margin: 10px;
+	float: right;
+}
+.problock {
+	width: 120px;
+	text-align: center;
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.problock img {
+	border-radius: 5px;
+	border: 3px solid #FFFFFF;
+	-webkit-box-shadow: 0px 0px 5px 0px #000000;
+	box-shadow: 0px 0px 5px 0px #000000;
+	margin-bottom: 10px;
+}
+#pro {
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+}
+iframe {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+#a6 table {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#a6 th {
+	width: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: right;
+	background-color: #DAF19E;
+}
+#a6 td {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#submit {
+	padding: 5px;
+	width: 100px;
+}
+#a1 {
+	background-color: #FFF2F1;
+}
+#a2 {
+	background-color: #E4E4E4;
+}
+#a4 {
+	background-color: #F2FFDC;
+}
+#a6 {
+	background-color: #FDE0FF;
+}
+.footerblock{
+	width: 350px;
+	margin-left: 5%;
+	float: left;
+}
+.footerblock a {
+	text-decoration: none;
+	line-height: 2em;
+}
+.footerblock a:hover {
+	color: #FF0004;
+}
+#footer h1 {
+	border-bottom: 1px solid #7E7E7E;
+}
+.footerblock span {
+	font-size: 3em;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+</style>
+<link href="css/lightbox.min.css" rel="stylesheet" type="text/css">
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="js/lightbox.min.js"></script>
+
+</head>
+
+<body>
+<div id="header">
+  <div id="logo"><a href="index.html">Cake House</a></div>
+  <div id="nav">
+    <ul>
+      <li><a href="#a1">馬卡龍</a></li>
+      <li><a href="#a2">蛋糕</a></li>
+      <li><a href="#a3">甜甜圈</a></li>
+      <li><a href="#a4">商品展示</a></li>
+      <li><a href="#a5">交通資訊</a></li>
+      <li><a href="#a6">聯絡我們</a></li>
+    </ul>
+  </div>
+  <div id="top"><a href="#">TOP</a></div>
+</div>
+<div id="container">
+  <div id="a1">
+    <h1>馬卡龍（macaron，法語發音：[makaʁɔ̃]）</h1><img src="images/macaron5_big.jpg" alt=""/>
+    <p>又稱作瑪卡龍、法式小圓餅，是一種用蛋白或aquafaba（英語：aquafaba）、糖粉、蔗糖、杏仁粉或杏仁霜以及食用色素製成的以蛋白脆餅為基礎的法式甜點，通常在兩塊餅乾之間夾有甘納許、奶油乳酪或果醬等內餡。名稱源於義大利語單詞macarone、maccarone或maccherone，一種義大利蛋白脆餅。</p>
+    <p>馬卡龍最早出現在義大利的修道院，當時有位名為Carmelie的修女為了替代葷食，而製作這種由杏仁粉的甜點，另外又稱為修女的馬卡龍，直到1533年佛羅倫斯公國公主凱薩琳·德·麥地奇與法蘭西王國國王亨利二世（King Henry II）結婚後，公主的隨從、僕人和廚師也陪嫁到法國，把義大利飲食文化和食譜一併帶到法國。</p>
+    <p>二十世紀初期，巴黎的糕點師傅Pierre Hermé發明一種方法來呈現馬卡龍，利用三明治夾法將甜美的稠膏狀餡料夾於傳統的兩個蓋子層，成為新的小圓餅，更由於香料和色素的使用、溼度控制，使得馬卡龍性質改良。相較於更早之前的小圓餅的甜、乾、易碎的特性，新的圓餅具備外殼酥脆的口感，內部卻濕潤、柔軟而略帶黏性，改良後的馬卡龍直徑大約為3.5-4公分之間。而今更有馬卡龍的專賣店，也富含各式各樣的口味。</p>
+  </div>
+  <div id="a2">
+    <h1>蛋糕</h1>
+    <img src="images/cake11_big.jpg" alt=""/>
+    <p>是一種糕點，通常是甜的，典型的蛋糕是以烤的方式製作出來。蛋糕一般是正式用餐，特別是婚禮或生日聚會時可選的甜點之一。在某些傳統中，新娘和新郎是第一個吃結婚蛋糕的，並常常用手指挖一塊蛋糕互相送到對方嘴巴裡。生日蛋糕一般有題字和裝飾，並插有蠟燭。</p>
+    <p>現在時代的烘焙店越來越有創意了，以前的糕點裝飾用很普通，但現在，烘焙店的蛋糕上有些會用糖果來裝飾，或是巧克力片，像有一種用杯子做的蛋糕，他的上方加珠珠、棉花糖，英文字母的翻糖來做裝飾，或是用不同的顏色鮮奶油用擠花器來做裝飾，讓外觀看起來很好看，這樣外觀變好看的話，就會有人買，還有一種蛋糕叫做瑞士捲，它是用捲的，有一些裡面會包水果。</p>
+    <p>蛋糕的製成材料主要包括麵粉，甜味劑（通常是蔗糖），黏合劑（一般是雞蛋，素食者可用麵筋和澱粉代替），起酥油（一般是奶油或人造奶油，低脂肪含量的蛋糕會以濃縮果汁代替），液體（牛奶，水或果汁），香精和發酵劑（例如酵母或者發酵粉）。</p>
+    <p>2015年9月，阿聯一個阿拉伯家庭在一個慶祝生日暨訂婚的蛋糕上，用上真鑽石作「裝飾」，成為全球最貴蛋糕。價值4,850萬英鎊的蛋糕，以時裝表演為主題，長1.83米、重450公斤。它貴在用上真鑽石作點綴，包括一顆5.2卡粉鑽、6.4卡黃鑽以及15顆5卡鑽石，單是這17顆巨鑽已值3,000萬鎊；另還有4,000顆細鑽，再加紫水晶及祖母綠寶石。單以蛋糕的時裝天橋造型，就以75粒3卡黑鑽、73粒3卡白鑽以及400粒1卡鑽石作襯托，閃閃生輝；而且有約30個人型蛋糕，每個都有與別不同的衣著，甚費心機。全個「壯舉」用了120公斤糖膏、60公斤巧克力作裝飾，噴上80種不同色素作效果，歷經1,100小時才完成。負責設計及烘培的33歲英國時裝設計師溫納姆表示，客人對蛋糕非常滿意，她發現藝術蛋糕能令人放鬆，而且有療癒性。</p>
+  </div>
+  <div id="a3">
+    <h1>甜甜圈（英語：Donut、Doughnut）</h1>
+    <img src="images/Donuts5_big.jpg" alt=""/>
+    <p>又稱多拿滋、唐納滋、甜甜圈，是一種用麵粉、砂糖、奶油和雞蛋混合後經過油炸的甜食。最普遍的兩種形狀是中空的環狀、或麵團中間有包入奶油、奶黃等甜餡料的封閉型甜甜圈。</p>
+    <p>在美國有許多人以甜甜圈作為早餐的主食，甚至還設立了「甜甜圈日」。近期甜甜圈的口味跟種類發展十分快速，研發出形形色色的口味。在亞洲，甜甜圈主要是被當成點心類的食物。</p>
+    <p>要將麵團作成甜甜圈的形狀，可以將長條型麵團的頭尾接合在一起形成環狀，或是利用環形的切割器將薄片的麵團切成適當的形狀。</p>
+    <p>甜甜圈可以用發酵過的麵團，或特殊種類的蛋糕麵糊製作。使用發酵麵團的甜甜圈，其重量約25%為油份；使用蛋糕麵糊的甜甜圈，油份在總重量中約佔20%，但以蛋糕麵糊中的奶油在油炸前已經包含額外的脂肪。蛋糕麵糊甜甜圈的油炸時間約為90秒鐘，過程中須翻面一次，油溫約在攝氏180-190度之間。發酵麵團甜甜圈會吸收較多的油，因此需要較長的油炸時間，約為180秒鐘，油溫約在攝氏178-180度之間。一個蛋糕麵糊甜甜圈約重24-28公克，發酵麵團甜甜圈一般來說體積較大，約重38公克。</p>
+    <p>油炸之後，環狀的甜甜圈通常會撒上糖粉、肉桂粉，或以糖衣包裹。其他中心沒有空洞的甜甜圈則可能會在其中注入奶油或奶黃，也可能會裹上糖衣、糖粉。</p>
+  </div>
+  <div id="a4">
+    <div id="pro">
+      <h1>杯子蛋糕 </h1>
+      <div class="problock"><a href="images/cupcake1_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake1_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake2_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake2_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake3_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake3_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake4_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake4_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake5_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake5_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake6_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake6_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake7_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake7_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake8_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake8_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake9_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake9_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake10_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake10_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake11_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake11_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake12_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake12_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake13_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake13_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake14_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake14_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake15_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake15_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake16_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake16_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <div class="problock"><a href="images/cupcake17_big.jpg" data-lightbox="image-1" data-title="杯子蛋糕"><img src="images/cupcake17_small.jpg" alt="杯子蛋糕"/></a><p>杯子蛋糕</p></div>
+      <h1>馬卡龍 </h1>
+      <div class="problock"><a href="images/macaron1_big.jpg" data-lightbox="image-2" data-title="馬卡龍"><img src="images/macaron1_small.jpg" alt="馬卡龍"/></a><p>馬卡龍</p></div>
+      <div class="problock"><a href="images/macaron2_big.jpg" data-lightbox="image-2" data-title="馬卡龍"><img src="images/macaron2_small.jpg" alt="馬卡龍"/></a><p>馬卡龍</p></div>
+      <div class="problock"><a href="images/macaron3_big.jpg" data-lightbox="image-2" data-title="馬卡龍"><img src="images/macaron3_small.jpg" alt="馬卡龍"/></a><p>馬卡龍</p></div>
+      <div class="problock"><a href="images/macaron4_big.jpg" data-lightbox="image-2" data-title="馬卡龍"><img src="images/macaron4_small.jpg" alt="馬卡龍"/></a><p>馬卡龍</p></div>
+      <div class="problock"><a href="images/macaron5_big.jpg" data-lightbox="image-2" data-title="馬卡龍"><img src="images/macaron5_small.jpg" alt="馬卡龍"/></a><p>馬卡龍</p></div>
+      <h1>甜甜圈 </h1>
+      <div class="problock"><a href="images/Donuts1_big.jpg" data-lightbox="image-3" data-title="甜甜圈"><img src="images/Donuts1_small.jpg" alt="甜甜圈"/></a><p>甜甜圈</p></div>
+      <div class="problock"><a href="images/Donuts2_big.jpg" data-lightbox="image-3" data-title="甜甜圈"><img src="images/Donuts2_small.jpg" alt="甜甜圈"/></a><p>甜甜圈</p></div>
+      <div class="problock"><a href="images/Donuts3_big.jpg" data-lightbox="image-3" data-title="甜甜圈"><img src="images/Donuts3_small.jpg" alt="甜甜圈"/></a><p>甜甜圈</p></div>
+      <div class="problock"><a href="images/Donuts4_big.jpg" data-lightbox="image-3" data-title="甜甜圈"><img src="images/Donuts4_small.jpg" alt="甜甜圈"/></a><p>甜甜圈</p></div>
+      <div class="problock"><a href="images/Donuts5_big.jpg" data-lightbox="image-3" data-title="甜甜圈"><img src="images/Donuts5_small.jpg" alt="甜甜圈"/></a><p>甜甜圈</p></div>
+      <h1>蛋糕 </h1>
+      <div class="problock"><a href="images/cake1_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake1_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake2_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake2_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake3_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake3_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake4_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake4_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake5_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake5_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake6_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake6_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake7_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake7_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake8_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake8_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake9_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake9_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake10_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake10_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <div class="problock"><a href="images/cake11_big.jpg" data-lightbox="image-4" data-title="蛋糕"><img src="images/cake11_small.jpg" alt="蛋糕"/></a><p>蛋糕</p></div>
+      <h1>餅乾 </h1>
+      <div class="problock"><a href="images/Cookies1_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies1_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies2_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies2_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies3_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies3_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies4_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies4_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies5_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies5_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies6_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies6_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+      <div class="problock"><a href="images/Cookies7_big.jpg" data-lightbox="image-5" data-title="餅乾"><img src="images/Cookies7_small.jpg" alt="餅乾"/></a><p>餅乾</p></div>
+    </div>
+  </div>
+  <div id="a5">
+  <h1>交通資訊 </h1>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380.83864190166673!2d121.75224276626717!3d24.75542215857289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3467e4c4955039ff%3A0x15b4fae32c7a4220!2zMjYw5a6c6Jit57ij5a6c6Jit5biC5Lit5bGx6Lev5LiJ5q61MjgtMeiZnw!5e0!3m2!1szh-TW!2stw!4v1519319402950" width="800" height="400" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+  <div id="a6">
+    <h1>聯絡我們
+    </h1>
+    <form action="mailto:hk1211@mail2000.com.tw" method="post" name="form1" id="form1">
+      <table border="0">
+        <tbody>
+          <tr>
+            <th scope="row">姓名：</th>
+            <td><input name="姓名" type="text" required id="姓名"></td>
+          </tr>
+          <tr>
+            <th scope="row">性別：</th>
+            <td><label>
+                <input type="radio" name="性別" value="男" id="性別_0">
+                男</label>
+              <label>
+                <input type="radio" name="性別" value="女" id="性別_1">
+              女</label></td>
+          </tr>
+          <tr>
+            <th scope="row">電子郵件：</th>
+            <td><input name="電子郵件" type="email" required id="電子郵件" size="40"></td>
+          </tr>
+          <tr>
+            <th scope="row">問題項目：</th>
+            <td><select name="問題" id="問題">
+              <option value="訂購問題">訂購問題</option>
+              <option value="退換貨">退換貨</option>
+              <option value="其它">其它</option>
+            </select></td>
+          </tr>
+          <tr>
+            <th scope="row">喜好商品：</th>
+            <td><p>
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="馬卡龍" id="CheckboxGroup1_0">
+                馬卡龍</label>
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="甜甜圈" id="CheckboxGroup1_1">
+                甜甜圈</label>
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="蛋糕" id="CheckboxGroup1_2">
+                蛋糕</label>
+              <br>
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="杯子蛋糕" id="CheckboxGroup1_3">
+                杯子蛋糕</label>
+              <label>
+                <input type="checkbox" name="CheckboxGroup1" value="餅乾" id="CheckboxGroup1_4">
+                餅乾</label>
+            </p></td>
+          </tr>
+          <tr>
+            <th scope="row">留言：</th>
+            <td><textarea name="留言" cols="40" rows="5" required id="留言"></textarea></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center" scope="row"><input type="submit" name="submit" id="submit" value="送出"></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>    
+  </div>
+</div>
+<div id="footer">
+<div class="footerblock">
+  <h1>導覽</h1>
+  <p><a href="#a1">馬卡龍</a></p>
+  <p><a href="#a2">蛋糕</a></p>
+  <p><a href="#a3">甜甜圈</a></p>
+  <p><a href="#a4">商品展示</a></p>
+  <p><a href="#a5">交通資訊</a></p>
+  <p><a href="#a6">聯絡我們</a></p>
+</div>
+<div class="footerblock"> 
+  <h1>社群</h1>
+  <span><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></span>
+  <span><a href="https://twitter.com/?lang=zh-tw" target="_blank"><i class="fab fa-twitter-square"></i></a></span>
+  <span><a href="https://plus.google.com/discover?hl=zh-TW" target="_blank"><i class="fab fa-google-plus-square"></i></a></span>
+  <span><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></span>
+  <img src="images/my_qrcode_1519326639278.jpg" width="230" height="230" alt=""/>
+</div>
+<div class="footerblock">
+  <h1>版權</h1>
+    CopyRight &copy; 2018 Cake House<br>
+    宜蘭市中山路三段28-1號
+  
+</div>
+</div>
+
+</body>
+</html>
